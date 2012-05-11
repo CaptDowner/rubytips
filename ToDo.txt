@@ -1,0 +1,8 @@
+Features to be added, in no special order:
+
+1. Fix search so that columns may be sorted while maintaining subset containing search records. 
+2. Add role-based user authentication so that authors of tips can add, delete and modify their own tips.
+3. Add documentation, so others can understand, fork, contribute, and comment on design and features.
+4. Add Home page, explain that questions should be posted to the ruby-talk mailing list/not to the author's email accounts.
+5. Consider deployment to Heroku and determine what costs might be involved initially and in the future.
+

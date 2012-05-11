@@ -1,0 +1,64 @@
+<% require 'obfuscate' %>
+
+<p id="notice"><%= notice %></p>
+<!--
+<p>
+  <b>Source:</b>
+  < % = @tip.source %>
+</p>
+-->
+<p>
+  <b>Type:</b>
+  <%= @tip.rubytype %>
+</p>
+
+<p>
+  <b>Applies to:</b>
+  <%= @tip.applies_to %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @tip.subject %>
+</p>
+
+<p>
+  <b>Keywords:</b>
+  <%= @tip.category %>
+</p>
+
+<p>
+  <b>Tip:</b>
+  <%= @tip.tip.html_safe %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= HTMLEntities.new.encode(@tip.email) %> 
+</p>
+
+<!--
+<p>
+  <b>Posted:</b>
+  < % = @tip.posted %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  < % = @tip.firstname %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  < % = @tip.lastname %>
+</p>
+
+obfuscation of ""s.d@comcast.net"
+<p>
+<b>Email:</b>
+&#115;&#46;&#100;&#64;&#99;&#111;&#109;&#99;&#97;&#115;&#116;&#46;&#110;&#101;&#116;
+</p>
+-->
+
+<%= link_to 'Edit', edit_tip_path(@tip) %> |
+<%= link_to 'Back', tips_path %>

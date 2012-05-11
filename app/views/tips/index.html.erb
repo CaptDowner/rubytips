@@ -1,0 +1,64 @@
+<center>
+<h1>Ruby tips</h1>
+<%= form_tag tips_path, method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+<%= paginate @tips %>
+
+<table>
+  <thead>
+  <tr>
+
+    <th align="left"><%= sortable "rubytype","Type" %></th>
+    <th align="left"><%= sortable "subject", "Subject" %></th>
+    <th align="left"><%= sortable "category", "Keywords" %></th>
+    <th align="left"><%= sortable "email","Email" %></th>
+    <th align="left"><%= sortable "source", "Source" %></th>
+<!--    
+    <th>< % = sortable "tip","Tip" %></th>
+    <th>< % = sortable "applies_to","Applies to" %></th>
+    <th align="left">< % = sortable "email","Email" %></th>
+    <th>< % = sortable "posted","Posted" %></th>
+    <th align="left">< % = sortable "firstname","Firstname" %></th>
+    <th align="left">< % = sortable "lastname", "Lastname" %></th>
+-->
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+<% @tips.each do |tip| %>
+  <tr>
+    <td><%= tip.rubytype %></td>
+    <td><%= tip.subject %></td>
+    <td><%= tip.category %></td>
+    <td><%= tip.email %></td>
+    <td><%= tip.source %></td>
+<!--    
+    <td>< % = tip.tip %></td> 
+    <td>< % = tip.applies_to %></td>
+    
+    <td>< % = tip.email %></td>
+    
+    <td>< % = tip.posted %></td>
+    
+    <td>< % = tip.firstname %></td>
+    <td>< % = tip.lastname %></td>
+-->
+    <td><%= link_to 'Show', tip %></td>
+    <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
+    <td><%= link_to 'Destroy', tip, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+
+  </tbody>
+</table>
+<br />
+<strong><%= paginate @tips %><br />
+<%= link_to 'New Tip', new_tip_path %>
+</strong>
+</center>
