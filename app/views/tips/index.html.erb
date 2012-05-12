@@ -1,6 +1,6 @@
 <center>
 <h1>Ruby tips</h1>
-<%= form_tag tips_path, method: :get do %>
+<%= form_tag tips_path, :method => 'get'  do %>
   <p>
     <%= text_field_tag :query, params[:query] %>
     <%= submit_tag "Search", name: nil %>
