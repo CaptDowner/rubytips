@@ -1,5 +1,12 @@
 <center>
-<h1>Ruby tips</h1>
+<table class='tip-top'>
+  <tr>
+    <td><img src='/assets/ruby.png' width='15' height='15'></td>
+    <td><h1>Ruby Tips</h1></td>
+    <td><img src='/assets/ruby.png' width='15' height='15'></td>
+  </tr>
+</table>
+
 <%= form_tag tips_path, :method => 'get'  do %>
   <p>
     <%= text_field_tag :query, params[:query] %>
@@ -17,14 +24,6 @@
     <th align="left"><%= sortable "category", "Keywords" %></th>
     <th align="left"><%= sortable "email","Email" %></th>
     <th align="left"><%= sortable "source", "Source" %></th>
-<!--    
-    <th>< % = sortable "tip","Tip" %></th>
-    <th>< % = sortable "applies_to","Applies to" %></th>
-    <th align="left">< % = sortable "email","Email" %></th>
-    <th>< % = sortable "posted","Posted" %></th>
-    <th align="left">< % = sortable "firstname","Firstname" %></th>
-    <th align="left">< % = sortable "lastname", "Lastname" %></th>
--->
     <th></th>
     <th></th>
     <th></th>
@@ -32,23 +31,12 @@
   </thead>
   <tbody>
 <% @tips.each do |tip| %>
-  <tr>
+  <tr class="<%= cycle('even', 'odd') -%>">
     <td><%= tip.rubytype %></td>
     <td><%= tip.subject %></td>
     <td><%= tip.category %></td>
-    <td><%= tip.email %></td>
+    <td><%= obscure_email(tip.email).html_safe %></td>
     <td><%= tip.source %></td>
-<!--    
-    <td>< % = tip.tip %></td> 
-    <td>< % = tip.applies_to %></td>
-    
-    <td>< % = tip.email %></td>
-    
-    <td>< % = tip.posted %></td>
-    
-    <td>< % = tip.firstname %></td>
-    <td>< % = tip.lastname %></td>
--->
     <td><%= link_to 'Show', tip %></td>
     <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
     <td><%= link_to 'Destroy', tip, confirm: 'Are you sure?', method: :delete %></td>
