@@ -1,3 +1,53 @@
 // Place all the styles related to the Tips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+table {
+  border: 1px;
+  border-color: gray;
+  border-style: solid;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5px;;
+  margin-bottom: -8px;
+  padding: 4px;
+}
+
+h1 {
+  color: white;
+  font-size: 28px;
+}
+
+table th{
+  font-size: 13px;
+  color: #000;
+  background-color: #3B3BEC;
+  padding: 4px 8px;
+  padding-bottom: 4px;
+  text-align: left;
+}
+
+table.tip-top {
+  border: 0px;
+  margin-top: -8px;
+  margin-bottom: -18px;
+}
+table td {
+  font-size: 12px;
+  padding: 2px 6px;
+}
+
+table td.tip {
+  background-color: white;
+  color: black;
+}
+
+tr.even {
+  background-color: #E5E5F1;
+  color: #000;
+}
+
+tr.odd {
+  background-color: #C1C1F6;
+  color: #000;
+}
+
