@@ -10,47 +10,50 @@
       </ul>
     </div>
   <% end %>
-
+<table>
+<tr>
+  <td>
   <div class="field">
-    <%= f.label :source %><br />
-    <%= f.text_field :source %>
+    <b><%= f.label :subject %>:</b></td><td><%= f.text_field :subject %></td>
   </div>
+  <td>
+  <div class="field"><b><%= f.label 'Keywords' %>:</b></td><td><%= f.text_field :category %></td>
+</tr>
+<tr>
+  <td>
+  <div class="field"><b><%= f.label :source %>:</b></td><td><%= f.text_field :source %></td>
+  </div>
+  <td>
+  <div class="field"><b><%= f.label 'Type' %>:</b></td><td><%= f.text_field :rubytype %></td>
+</tr>
+<tr>
+  <td colspan='4'>
+  <div class="field"><b><%= f.label :tip %>:</b></td>
+  </div>
+</tr>
+<tr>
+  <td colspan='4'><%= f.text_area(:tip, :size => "102x12") %></td>
+</tr>
+<tr>
   <div class="field">
-    <%= f.label 'Type' %><br />
-    <%= f.text_field :rubytype %>
+  <td><div class="field"><b><%= f.label :email %>:</b></td><td><%= f.text_field :email %></td>
   </div>
+  <td><div class="field"><b><%= f.label :applies_to %>:</b></td><td><%= f.text_field :applies_to %></td>
+  </div>
+</tr>
+<tr>
+  <td><div class="field"><b><%= f.label :posted %>:</b></td><td colspan='2'><%= f.datetime_select :posted %></td><td></td>
+</tr>
+<tr>
   <div class="field">
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject %>
+  <td><div class="field"><b><%= f.label :firstname %>:</b></td><td><%= f.text_field :firstname %></td>
   </div>
-  <div class="field">
-    <%= f.label 'Keywords' %><br />
-    <%= f.text_field :category %>
+  <td><div class="field"><b><%= f.label :lastname %>:</b></td><td><%= f.text_field :lastname %></td>
   </div>
-  <div class="field">
-    <%= f.label :tip %><br />
-    <%= f.text_area(:tip, :size => "102x12") %>
-  </div>
-  <div class="field">
-    <%= f.label :applies_to %><br />
-    <%= f.text_field :applies_to %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :posted %><br />
-    <%= f.datetime_select :posted %>
-  </div>
-  <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :lastname %><br />
-    <%= f.text_field :lastname %>
-  </div>
+</tr>
+<tr> 
+</table>
+<br />
   <div class="actions">
     <%= f.submit %>
   </div>
