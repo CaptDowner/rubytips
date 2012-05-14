@@ -1,64 +1,33 @@
+<center>
 <% require 'obfuscate' %>
-
+<table class='tip-top'><tr><td><img src='/assets/ruby.png' width='15 height='15>
+<td><h1>Ruby Tip</h1></td>
+<td><img src='/assets/ruby.png' width='15 height='15></td>
+</tr>
+</table>
 <p id="notice"><%= notice %></p>
-<!--
-<p>
-  <b>Source:</b>
-  < % = @tip.source %>
-</p>
--->
-<p>
-  <b>Type:</b>
-  <%= @tip.rubytype %>
-</p>
 
-<p>
-  <b>Applies to:</b>
-  <%= @tip.applies_to %>
-</p>
-
-<p>
-  <b>Subject:</b>
-  <%= @tip.subject %>
-</p>
-
-<p>
-  <b>Keywords:</b>
-  <%= @tip.category %>
-</p>
-
-<p>
-  <b>Tip:</b>
-  <%= @tip.tip.html_safe %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= HTMLEntities.new.encode(@tip.email) %> 
-</p>
-
-<!--
-<p>
-  <b>Posted:</b>
-  < % = @tip.posted %>
-</p>
-
-<p>
-  <b>Firstname:</b>
-  < % = @tip.firstname %>
-</p>
-
-<p>
-  <b>Lastname:</b>
-  < % = @tip.lastname %>
-</p>
-
-obfuscation of ""s.d@comcast.net"
-<p>
-<b>Email:</b>
-&#115;&#46;&#100;&#64;&#99;&#111;&#109;&#99;&#97;&#115;&#116;&#46;&#110;&#101;&#116;
-</p>
--->
-
+<table>
+<tr>
+  <td><b>Type:</b></td><td><%= @tip.rubytype %></td>
+  <td><b>Subject:</b></td><td><%= @tip.subject %></td>
+</tr>
+<tr>
+  <td><b>Applies to:</b></td><td><%= @tip.applies_to %></td>
+  <td><b>Keywords:</b></td><td><%= @tip.category %></td>
+</tr>
+<tr>
+<tr>
+  <td><b>Tip:</b></td><td></td><td></td><td></td>
+</tr>
+  <td class='tip' colspan='4'><code><%= @tip.tip.html_safe %></code></td>
+</tr>
+<tr>
+  <td><b>Email:</b></td>
+  <td colspan='3'><%= obscure_email(@tip.email).html_safe %> </td>
+</tr>
+</table>
+<br />
 <%= link_to 'Edit', edit_tip_path(@tip) %> |
 <%= link_to 'Back', tips_path %>
+</center>
