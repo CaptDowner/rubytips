@@ -2,6 +2,7 @@
 <% require 'obfuscate' %>
 <table class='tip-top'><tr><td><img src='/assets/ruby.png' width='15 height='15>
 <td><h1>Ruby Tip</h1></td>
+
 <td><img src='/assets/ruby.png' width='15 height='15></td>
 </tr>
 </table>
@@ -27,8 +28,15 @@
   <td colspan='3'><%= obscure_email(@tip.email).html_safe %> </td>
 </tr>
 </table>
-<br />
-<%= link_to 'Edit', edit_tip_path(@tip) %> |
-<%= link_to 'Back', tips_path %>
+<div class='privacy'>
+<table>
+  <tr>
+    <td><%= button_to 'Edit', edit_tip_path(@tip), {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'Policy', page_path("policy"), {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'About', page_path("about"), {:class => "buttonTo", :method => "get"} %></td>
+  </tr>
+</table> 
+</div>
 </center>
 
