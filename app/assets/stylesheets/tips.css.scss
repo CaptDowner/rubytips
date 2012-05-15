@@ -17,10 +17,31 @@ h1 {
   font-size: 28px;
 }
 
+.buttonTo {
+//background-image: url(plus_8x8.png);
+background-repeat:no-repeat;
+display:block;
+float: center;
+margin:0 7px 0 0;
+background-color:#f5f5f5;
+border:1px solid #dedede;
+border-top:1px solid #eee;
+border-left:1px solid #eee;
+font-family: Arial;
+font-size: 12px;
+text-align: center;
+line-height:100%;
+text-decoration:none;
+font-weight:bold;
+color:#565656;
+cursor:pointer;
+padding:3px 6px 3px 6px;;  /* I put this here to move the text away on older IE junk */
+}
+ 
 table th{
   font-size: 13px;
   color: #000;
-  background-color: #3B3BEC;
+  background-color: #0f0fc3;
   padding: 4px 8px;
   padding-bottom: 4px;
   text-align: left;
@@ -33,7 +54,7 @@ table.tip-top {
 }
 table td {
   font-size: 12px;
-  padding: 2px 6px;
+  padding: 0px 2px;
 }
 
 table td.tip {
@@ -42,13 +63,45 @@ table td.tip {
 }
 
 tr.even {
-  background-color: #7a7a98;
+  background-color: #6a6a98;
   color: #fff;
+}
+
+.privacy table {
+  border: 0px;
+  margin-right: 18%;
+  margin-left: 18%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+}
+
+td.rt-heading {
+  line-height: 6px;
+  padding: -0.5em;
+  padding-bottom: -0.5em;
+  margin: -0.05em;
+//  margin-bottom: 0px;
+  
+}
+.rt-heading h2 {
+  font-size: 18px;
+  margin-bottom: -0,5em;
+}
+.privacy.td.rt-heading {
+  font-family: Arial;
+  font-size: 14px;
+  text-align: center;
+  
+//  line-height:100%;  
+  font-weight:bold;
+  margin-bottom: -0.5em;
+  padding-top: 0px;
+  padding-bottom: -0.5em;
 }
 
 tr.odd {
 //  background-color: #5D5DF3;
-  background-color: #5050D7;
+  background-color: #3535c3;
   color: #fff;
 }
 
