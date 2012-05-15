@@ -6,7 +6,18 @@
 </table>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @tip %> |
-<%= link_to 'Back', tips_path %>
+<div class='privacy'>
+<table>
+  <tr>
+    <td><%= button_to 'Show', @tip, {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'Policy', page_path("policy"), {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'About', page_path("about"), {:class => "buttonTo", :method => "get"} %></td>
+  </tr>
+</table> 
+</div>
+<!--
+< % = link_to 'Show', @tip %> |
+< % = link_to 'Back', tips_path %>
+-->
 </center>
