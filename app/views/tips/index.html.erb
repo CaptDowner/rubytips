@@ -45,8 +45,16 @@
 
   </tbody>
 </table>
-<br />
-<strong><%= paginate @tips %><br />
-<%= link_to 'New Tip', new_tip_path %>
-</strong>
+<p>
+<strong><%= paginate @tips %></p></strong>
+<div class='privacy'>
+<table>
+  <tr>
+    <td><%= button_to "New Tip",  new_tip_path, {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'Policy', page_path("policy"), {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'Home', page_path("about"), {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'About', page_path("about"), {:class => "buttonTo", :method => "get"} %></td>
+  </tr>
+</table> 
+</div>
 </center>
