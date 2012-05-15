@@ -17,7 +17,7 @@
     <b><%= f.label :subject %>:</b></td><td><%= f.text_field :subject %></td>
   </div>
   <td>
-  <div class="field"><b><%= f.label 'Keywords' %>:</b></td><td><%= f.text_field :category %></td>
+  <div class="field"><b><%= f.label 'Keywords' %>:</b></td><td width='66'><%= f.text_field :category %></td>
 </tr>
 <tr>
   <td>
@@ -27,12 +27,10 @@
   <div class="field"><b><%= f.label 'Type' %>:</b></td><td><%= f.text_field :rubytype %></td>
 </tr>
 <tr>
-  <td colspan='4'>
+  <td>
   <div class="field"><b><%= f.label :tip %>:</b></td>
   </div>
-</tr>
-<tr>
-  <td colspan='4'><%= f.text_area(:tip, :size => "102x12") %></td>
+  <td colspan='3'><%= f.text_area(:tip, :size => "102x12") %></td>
 </tr>
 <tr>
   <div class="field">
