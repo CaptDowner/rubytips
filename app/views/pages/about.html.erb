@@ -3,7 +3,7 @@
 </head>
 <body>
 <center>
-<h1>RubyTalkTips (-v tbd) will be released soon!</h1>
+<h1>About RubyTalkTips</h1>
 <div class="privacy">
 <table>
 <tr>
@@ -56,16 +56,16 @@ Interested? Email us at <a href="mailto:"captdowner@gmail.com">RubyTalkTips</a>
 <tr><td>
 <a href="https://github.com/CaptDowner/rubytips">https://github.com/CaptDowner/rubytips</a></td>
 </tr>
-
-<tr><td>Please fork away! If you come up with a great idea or improvement, please submit a pull request so worthwhile changes can be added back to the RubyTalkTips github repo.
+<tr><td>Please fork away! If you come up with a great idea or improvement, please submit a pull request so worthwhile changes can be added back to the RubyTalkTips github repo.</td>
+</tr>
 <tr>
 <td class="rt-heading"><h2>Features</h2></td>
 </tr>
 <tr><td><b><font size='+1'>*</font></b> Database of tips related to the Ruby language</td></tr>
 <tr><td><b><font size='+1'>*</font></b> Tips collected from ruby-talk and rubyonrails-talk email lists</td></tr>
 <tr><td><b><font size='+1'>*</font></b> All tips are searchable by keyword</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Column sorting by relevant fields</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Editable by authors of tips</td></tr>
+<tr><td><b><font size='+1'>*</font></b> Column sorting</td></tr>
+<tr><td><b><font size='+1'>*</font></b> Editable (by authors of tips)</td></tr>
 <tr><td><b><font size='+1'>*</font></b> Open posting of new tips</td></tr>
 <tr><td><b><font size='+1'>*</font></b> Uses PostgreSQL database, enabling full text searches</td></tr>
 <tr>
@@ -95,18 +95,21 @@ Interested? Email us at <a href="mailto:"captdowner@gmail.com">RubyTalkTips</a>
 <tr><td><b><font size='+1'>*</font></b> Move app to a cloud based solution (perhaps Heroku?) for scalability
   and resource issues</td>
 </tr>
-<tr>
-<td>
-email: <a href="mailto:"captdowner@gmail.com">RubyTalkTips</a>
-</td>
-</tr>
 </table>
+</center>
+<div class='email_link'>
+Email: <a href="mailto:"captdowner@gmail.com">RubyTalkTips</a>
+</div>  <!-- end div::email_link -->
+<center>
+<div class='privacy'>
 <table>
   <tr>
     <td><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
     <td><%= button_to 'Policy', page_path("policy"), {:class => "buttonTo", :method => "get"} %></td>
-    <td><%= button_to 'Home', page_path("about"), {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'About', page_path("about"), {:class => "buttonTo", :method => "get"} %></td>
   </tr>
 </table> 
+</div> <!-- end div::privacy -->
+</center>
 </body>
 </html>
