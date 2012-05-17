@@ -13,7 +13,6 @@ gem 'kaminari'
 gem 'pg_search', '>= 0.4.2'
 gem 'texticle', require: 'texticle/rails'
 gem 'high_voltage', '>= 1.1.1'
-gem 'acts_as_rateable', '~> 2.0.1'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
