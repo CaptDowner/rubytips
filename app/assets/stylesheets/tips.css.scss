@@ -57,10 +57,22 @@ table td {
   padding: 0px 2px;
 }
 
-table td.tip {
+.tip {
   background-color: white;
   color: black;
 }
+
+td.tip a {
+  background-color: white;
+  color: blue;
+}
+
+
+td.tip a:hover {
+  background-color: white;
+  color: green;
+}
+  
 
 tr.even {
   background-color: #6a6a98;
