@@ -38,8 +38,8 @@
     <td><%= obscure_email(tip.email).html_safe %></td>
     <td><%= tip.source %></td>
     <td class='idx-a'><%= link_to 'Show', tip %></td>
-    <td class='idx-a'><%= link_to 'Edit', edit_tip_path(tip) %></td>
-<!--    <td class='idx-a'>< % = link_to 'Destroy', tip, confirm: 'Are you sure?', method: :delete %></td> -->
+<!--    <td class='idx-a'>< % = link_to 'Edit', edit_tip_path(tip) %></td>
+    <td class='idx-a'>< % = link_to 'Destroy', tip, confirm: 'Are you sure?', method: :delete %></td> -->
   </tr>
 <% end %>
 
@@ -51,8 +51,6 @@
 <table>
   <tr>
     <td><%= button_to "New Tip",  new_tip_path, {:class => "buttonTo", :method => "get"} %></td>
-    <td><%= button_to 'Policy', page_path("policy"), {:class => "buttonTo", :method => "get"} %></td>
-    <td><%= button_to 'Home', page_path("about"), {:class => "buttonTo", :method => "get"} %></td>
     <td><%= button_to 'About', page_path("about"), {:class => "buttonTo", :method => "get"} %></td>
   </tr>
 </table> 
