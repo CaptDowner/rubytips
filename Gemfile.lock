@@ -154,6 +154,7 @@ DEPENDENCIES
   htmlentities
   jquery-rails
   kaminari
+  mail (>= 2.4.4)
   minitest
   pg
   pg_search (>= 0.4.2)
