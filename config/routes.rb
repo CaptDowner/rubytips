@@ -53,6 +53,7 @@ Tips::Application.routes.draw do
   # Rails 3
   match 'about' => 'high_voltage/pages#about', :id => 'about'
   match 'pages/about' => 'high_voltage/pages#about', :id => 'about'  
+ 
   root :to => 'high_voltage/pages#about', :id => 'about' 
   #root :to => 'tips#index'
 
