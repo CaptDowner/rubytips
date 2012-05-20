@@ -25,7 +25,14 @@
 </tr>
 <tr>
   <td><b>Email:</b></td>
-  <td colspan='3'><%= obscure_email(@tip.email).html_safe %> </td>
+  <td><%= obscure_email(@tip.email).html_safe %></td>
+  <td><b>Refers to:</b></td>
+  <% if(@tip.xmail == nil) %>
+     <td>unknown</td>
+  <% else %>
+    <% msg ='http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/' + @tip.xmail %> 
+    <td><a href='<%= msg %>'><%= @tip.xmail %></a></td>
+  <% end %>
 </tr>
 </table>
 <div class='privacy'>
