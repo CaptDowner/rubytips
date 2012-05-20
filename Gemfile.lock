@@ -148,10 +148,6 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (>= 3.2.2)
-<<<<<<< HEAD
-  acts_as_rateable (~> 2.0.1)
-=======
->>>>>>> 2d7c5312fc0523f436c19c2445734b5b22bd471f
   capybara
   coffee-rails (~> 3.2.1)
   high_voltage (>= 1.1.1)
