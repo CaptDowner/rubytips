@@ -14,6 +14,10 @@ gem 'pg_search', '>= 0.4.2'
 gem 'texticle', require: 'texticle/rails'
 gem 'high_voltage', '>= 1.1.1'
 gem 'mail', '>= 2.4.4'
+gem 'warden', '>= 1.1.1'
+gem 'orm_adapter', '>= 0.0.7'
+gem 'devise', '~> 2.1.0'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
