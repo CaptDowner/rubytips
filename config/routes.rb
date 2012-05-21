@@ -1,4 +1,6 @@
 Tips::Application.routes.draw do
+  devise_for :users
+
   get "tips/index"
 
   # The priority is based upon order of creation:
