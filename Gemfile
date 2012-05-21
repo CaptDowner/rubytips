@@ -18,6 +18,8 @@ gem 'warden', '>= 1.1.1'
 gem 'orm_adapter', '>= 0.0.7'
 gem 'devise', '~> 2.1.0'
 
+gem 'rainbow'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
