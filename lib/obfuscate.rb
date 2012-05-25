@@ -324,6 +324,6 @@ class String
   end
 end
 
-str = "sad"
+# str = "sad"
 
-str.obfuscate
+# str.obfuscate
