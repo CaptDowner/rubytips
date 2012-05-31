@@ -17,6 +17,9 @@ gem 'mail', '>= 2.4.4'
 gem 'warden', '>= 1.1.1'
 gem 'orm_adapter', '>= 0.0.7'
 gem 'devise', '~> 2.1.0'
+gem 'cancan', '~> 1.6.7'
+gem 'role_model', '~> 0.7.1'
+gem 'canard', '~> 0.3.4'
 
 gem 'rainbow'
 
