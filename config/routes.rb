@@ -1,6 +1,4 @@
 Tips::Application.routes.draw do
-  devise_for :users
-
   get "tips/index"
 
   # The priority is based upon order of creation:
@@ -55,8 +53,7 @@ Tips::Application.routes.draw do
   # Rails 3
   match 'about' => 'high_voltage/pages#about', :id => 'about'
   match 'pages/about' => 'high_voltage/pages#about', :id => 'about'  
- 
-  root :to => 'high_voltage/pages#about', :id => 'about' 
+  root :to => 'pages#about', :id => 'about' 
   #root :to => 'tips#index'
 
   # See how all your routes lay out with "rake routes"
