@@ -1,0 +1,45 @@
+<!-- START:notice -->
+<h1>Listing users</h1>
+
+<!-- START_HIGHLIGHT -->
+<p id="notice"><%= notice %></p>
+
+<!-- END_HIGHLIGHT -->
+<!-- ... -->
+<!-- END:notice -->
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Encrypted Password</th>
+    <th>Reset Password Token</th>
+    <th>Role</th>
+    <th>Remember Created At</th>
+    <th>Sign In Count</th>
+    <th>Current Sign In At</th>
+    <th>Last Sign In At</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.email %></td>
+    <td><%= user.encrypted_password %></td>
+    <td><%= user.reset_password_token %></td>
+    <td><%= user.role %></td>
+    <td><%= user.remember_created_at %></td>
+    <td><%= user.sign_in_count %></td>
+    <td><%= user.current_sign_in_at %></td>
+    <td><%= user.last_sign_in_at %></td>
+
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

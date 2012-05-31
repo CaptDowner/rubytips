@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Hashed password:</b>
+  <%= @user.hashed_password %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%= @user.role %>
+</p>
+
+<p>
+  <b>Salt:</b>
+  <%= @user.salt %>
+</p>
+
+<p>
+  <b>Sign in count:</b>
+  <%= @user.sign_in_count %>
+</p>
+
+<p>
+  <b>Signed in:</b>
+  <%= @user.current_sign_in_at %>
+</p>
+
+<p>
+  <b>Prior Signed in:</b>
+  <%= @user.last_sign_in_at %>
+</p>
+
+<p>
+  <b>Remember Created at:</b>
+  <%= @user.remember_created_at %>
+</p>
+
+<p>
+  <b>Reset Password token:</b>
+  <%= @user.reset_password_token %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
