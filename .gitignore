@@ -12,6 +12,10 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+# Ignore concerns
+/app/controllers/concerns/*
+/app/models/concerns/*
+
 # Ignore spec tmp files
 /spec/tmp/*
 .rspec

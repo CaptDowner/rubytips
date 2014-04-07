@@ -1,47 +1,103 @@
-// Place all the styles related to the Tips controller here.
+// All the styles related to thy Tips controller are here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 table {
   border: 1px;
   border-color: gray;
   border-style: solid;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 19%;
+  margin-right: 19%;
   margin-top: 5px;;
   margin-bottom: -8px;
   padding: 4px;
 }
 
-h1 {
+table.foot-buttons {
+  border: none;
+}
+
+.tipz table {
+  width: 80%;
+  margin-left:10%;
+  margin-right: 10%;
+}
+
+table.redback {
+  background-color: #00458A;
+  color: #FFFFFF;
+}
+
+input {
+  font-weight: bold;
+}
+
+#cc-by table {
+  text-align: center;
+  border: 0px none;
+  margin-top: -12px;
+}
+
+input.buttonTo {
+  font-size: 14px;
+}
+
+.about {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.about table {
+  border: none;
+}
+
+#cc-by img {
+}
+
+p.please {
+  margin-bottom: -10px;
+}
+.policytable table{
+  margin-top: 6pt;
+  padding-top: -6pt;
+}
+p.commons {
+  margin-top: 2px;
+  margin-bottom: 1px;
+  font-size: 8px;
+  font-weight: normal;
+  color: #dee7ef;
+}
+
+p.commons a:hover{
+  background-color: #006bd6;
   color: white;
-  font-size: 28px;
 }
 
 .buttonTo {
-//background-image: url(plus_8x8.png);
-background-repeat:no-repeat;
-display:block;
-float: center;
-margin:0 7px 0 0;
-background-color:#f5f5f5;
-border:1px solid #dedede;
-border-top:1px solid #eee;
-border-left:1px solid #eee;
-font-family: Arial;
-font-size: 12px;
-text-align: center;
-line-height:100%;
-text-decoration:none;
-font-weight:bold;
-color:#565656;
-cursor:pointer;
-padding:3px 6px 3px 6px;;  /* I put this here to move the text away on older IE junk */
+  background-repeat:no-repeat;
+  display:block;
+  float: center;
+  margin:0 7px 0 0;
+  background-color:#f5f5f5;
+  border:1px solid #dedede;
+  border-top:1px solid #eee;
+  border-left:1px solid #eee;
+  font-family: Arial;
+  font-size: 12px;
+  text-align: center;
+  line-height:100%;
+  text-decoration:none;
+  font-weight:bold;
+  color:#565656;
+  cursor:pointer;
+  padding:3px 6px 3px 6px;
 }
- 
+
 table th{
   font-size: 13px;
-  color: #000;
-  background-color: #0f0fc3;
+  color: #000000;
+  background-color: #005EBD;
   padding: 4px 8px;
   padding-bottom: 4px;
   text-align: left;
@@ -49,33 +105,59 @@ table th{
 
 table.tip-top {
   border: 0px;
-  margin-top: -8px;
-  margin-bottom: -18px;
+  padding: 10px 0 10px 0;
+  margin-top: 0px;
+  margin-bottom: -16px;
+  margin-left: 22px;
+  margin-right: 22px;
 }
+
+h1 {
+  color: white;
+  font-size: 24px;
+  padding-top: 12px;
+  margin-top: 7pt;
+  margin-bottom: 19pt;
+  border: 2px;
+  border-style: inset;
+  border-color: #869ecf;
+
+}
+
+.tip-top h1{
+  height: 18pt;
+  padding: 3% 6% 3% 6%;
+  margin:  2pt 6pt 0 6pt;
+}
+
+.tip-top td {
+  margin-bottom: 8pt;
+}
+
 table td {
   font-size: 12px;
-  padding: 0px 2px;
+  padding: 0px 2px; 
 }
 
 .tip {
-  background-color: white;
-  color: black;
+  background-color: #DEE7EF;
+  color: #000063;
 }
 
 td.tip a {
-  background-color: white;
-  color: blue;
+  background-color: #DEE7EF;
+  color: #000073;
 }
 
 
-td.tip a:hover {
-  background-color: white;
-  color: green;
+td.tip a:hover, td a:hover{
+  background-color: #006bd6;
+ color: white;
 }
 
-tr.even {
-  background-color: #6a6a98;
-  color: #fff;
+.email_link a:hover{
+  background-color: #006bd6;
+  color: white;
 }
 
 .email_link {
@@ -83,50 +165,145 @@ tr.even {
   margin-top: 0.5em;
   margin-bottom: 0,5em;
 }
+
 .privacy table {
+  width: 96%;
   border: 0px;
-  margin-right: 18%;
-  margin-left: 18%;
+  margin-right: 3%;
+  margin-left: 2%;
   margin-top: 0.5em;
-  margin-bottom: -6px;
+  margin-bottom: -16px;
+}
+
+table.privacy {
+  width: 96%;
+  border: 0px;
+  margin-right: 3%;
+  margin-left: 2%;
+  margin-top: 0.5em;
+  margin-bottom: -16px;
 }
 
 td.rt-heading {
   line-height: 6px;
   padding: -0.5em;
-  padding-bottom: -0.5em;
-  margin: -0.05em;
-//  margin-bottom: 0px;
-  
+  margin: 0;
 }
+
 .rt-heading h2 {
   font-size: 18px;
   margin-bottom: -0,5em;
 }
-.privacy.td.rt-heading {
+
+.privacy td.rt-heading {
   font-family: Arial;
   font-size: 14px;
   text-align: center;
-  
-//  line-height:100%;  
   font-weight:bold;
   margin-bottom: -0.5em;
   padding-top: 0px;
   padding-bottom: -0.5em;
 }
 
+.privacy td {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-weight: normal;
+}
+td.reddy {
+  background-color: #006BD6;
+  color: #FFFFFF;
+  margin: 2pt 4pt 2pt 4pt;
+  padding: 2pt 4pt 2pt 4pt;
+}
+
+td.reddy1{
+  background-color: #006BD6;
+  text-align: right;
+}
+
+td.reddy2 {
+  background-color: #006BD6;
+  text-align: right;
+  padding-left: 4pt
+}
+
+td.reddy3 {
+  background-color: #006BD6;
+  text-align: left;
+  padding-left: 36pt;
+}
+
 tr.odd {
-//  background-color: #5D5DF3;
-  background-color: #3535c3;
+  background-color: #005EBD;
   color: #fff;
 }
 
-//a {
-//  background-color: white;
-//  color: dark gray;
-//}
+tr.even {
+  background-color: #6f7b93;
+  color: #fff;
+}
 
-//a:hover {
-//  background-color: dark gray;
-//  color: white;
-//}
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: dark gray;
+  color: white;
+}
+
+input#tip_subject,
+input#tip_source,
+input#tip_email,
+input#tip_firstname {
+  width: 354px;
+  height: 24px;
+}
+
+input#tip_lastname,
+input#tip_applies_to,
+input#tip_xmail,
+input#tip_rubytype,
+input#tip_category {
+  width: 286px;
+}
+
+.rt-heading {
+  background-color: #005EBD;
+}
+
+.rt-heading h2{
+  padding-left: 2%;
+}
+
+.rt-head-top {
+  background-color: #005EBD;
+  margin: 2% 18.75% 0.5% 18.25%;
+  height: 32px;
+  border: 3px;
+  border-style: inset;
+  border-color: #869ecf;
+}
+
+@-moz-document url-prefix() {
+  input[type="button"],
+  input[type="submit"],
+  button.btn {
+    padding-bottom: -2pt;
+    margin-top: 0;
+  }
+}
+#search input {
+  line-height: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: -20px;
+  padding-bottom: -6px;
+}
+
+#search input#query {
+  height: 9pt;
+  font-size: 11px;
+  padding-bottom:3pt;
+}

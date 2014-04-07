@@ -8,52 +8,79 @@
         <li><%= msg %></li>
       <% end %>
       </ul>
+
     </div>
   <% end %>
+<br/>
 <table>
-<tr>
-  <td>
-  <div class="field">
-    <b><%= f.label 'Subject:' %></b></td><td><%= f.text_field :subject %></td>
-  </div>
-  <td>
-  <div class="field"><b><%= f.label 'Keywords:' %></b></td><td width='66'><%= f.text_field :category %></td>
-</tr>
-<tr>
-  <td>
-  <div class="field"><b><%= f.label 'Source:' %></b></td><td><%= f.text_field :source %></td>
-  </div>
-  <td>
-  <div class="field"><b><%= f.label 'Type:' %></b></td><td><%= f.text_field :rubytype %></td>
-</tr>
-<tr>
-  <td>
-  <div class="field"><b><%= f.label 'Tip:' %></b></td>
-  </div>
-  <td colspan='3'><%= f.text_area(:tip, :size => "102x12") %></td>
-</tr>
-<tr>
-  <div class="field">
-  <td><div class="field"><b><%= f.label 'Email:' %></b></td><td><%= f.text_field :email %></td>
-  </div>
-  <td><div class="field"><b><%= f.label 'Applies to:' %></b></td><td><%= f.text_field :applies_to %></td>
-  </div>
-</tr>
-<tr>
-  <td><div class="field"><b><%= f.label 'Posted:' %></b></td><td><%= f.datetime_select :posted %></td>
-  <td><div class="field"><b>Reference:</b></td><td><%= f.text_field :xmail %></td>
-</tr>
-<tr>
-  <div class="field">
-  <td><div class="field"><b><%= f.label 'Firstname:' %></b></td><td><%= f.text_field :firstname %></td>
-  </div>
-  <td><div class="field"><b><%= f.label 'Lastname:' %></b></td><td><%= f.text_field :lastname %></td>
-  </div>
-</tr>
-<tr> 
+  <tr>
+    <td class='reddy1'>
+      <div class="field"><b><%= f.label 'Subject:' %></b></td><td><%= f.text_field :subject %></td></div>
+    <td class='reddy1'>
+      <div class="field"><b><%= f.label 'Keywords:' %></b></td><td width='66'><%= f.text_field :category %></div>
+    </td>
+  </tr>
+  <tr>
+    <td class='reddy1'>
+      <div class="field"><b><%= f.label 'Source:' %></b></td><td><%= f.text_field :source %></td></div>
+    <td class='reddy1'>
+      <div class="field"><b><%= f.label 'Type:' %></b></td><td><%= f.text_field :rubytype %></div>
+    </td>
+  </tr>
+  <tr>
+    <td class='reddy2'>
+      <div class="field"><b><%= f.label 'Tip:' %></b></div>
+    </td>
+    <td colspan='3'><%= f.text_area(:tip, :size => "102x18") %></td>
+  </tr>
+  <tr>
+    <td class='reddy1'>
+      <div class="field"><b><%= f.label 'Email:' %></b></td><td><%= f.text_field :email %></div>
+    </td>
+    <td class='reddy1'>
+      <div class="field"><b><%= f.label 'Applies to:' %></b></td><td><%= f.text_field :applies_to %></div>
+    </td>
+  </tr>
+  <tr>
+    <td class='reddy1'>
+      <div class="field"><b><%= f.label 'Firstname:' %></b></td><td><%= f.text_field :firstname %></div>
+    </td>
+    <td class='reddy1'>
+      <div class="field"><b><%= f.label 'Lastname:' %></b></td><td><%= f.text_field :lastname %></div>
+    </td>
+  </tr>
+  <tr>
+    <td class='reddy1'>
+      <div class="field"><b><%= f.label 'Posted:' %></b></td><td><%= f.datetime_select :posted %></div>
+    </td>
+    <td class='reddy1'>
+      <div class="field"><b>Reference:</b></td><td><%= f.text_field :xmail %></duv>
+    </td>
+  </tr>
 </table>
+
 <br />
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<table class='foot-buttons'>
+  <tr>
+    <div class="actions">
+      <td><%= f.submit %></td>
+      <% end %>
+      <td><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
+    </div>
+  </tr>
+</table>
+
+
+<!--
+
+Conditional form display for buttons:
+
+Couple of options:
+
+   1. Have two different submit buttons (one for each form) and then actually 
+      have this be part of the tab content instead of the modal-footer.
+   2. Generate two modal footer divs and set the second one to display: none. 
+      Then through javascript toggle the visibility appropriately. I'd probably take this approach.
+   3. Via javascript override the form target based on the tab that gets clicked.
+
+-->

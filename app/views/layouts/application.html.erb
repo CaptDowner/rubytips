@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tips</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <script type="text/javascript" src="jquery-latest.js"></script> 
-  <script type="text/javascript" src="tablesorter.js"></script> 
+<title>Ruby Talk Tips</title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script type="text/javascript" src="/assets/jquery-latest.js"></script>
+  <script type="text/javascript" src="/assets/tablesorter.js"></script>
 
   <%= csrf_meta_tags %>
+
 <style type="text/css">
   code { white-space: pre; }
 </style>
+
 </head>
 <body>
+<center>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>
-<br />
-<center>
-<div id='cc-by'>
-<a rel="license" href="http://creativecommons.org/licenses/by/3.0/us/"><img width='60' height='20' alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/us/88x31.png" /></a><br /><font size='-10' color='white'>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/us/"><font color='white'>Creative Commons Attribution 3.0 United States License</font></a></font>.
-</div>
-</center>
+  <br />
+  <center>
+    <div id='cc-by'>
+    <table>
+    <tr>
+      <td><a rel="license" href="http://creativecommons.org/licenses/by/3.0/us/"><img width='60' height='20' alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/us/88x31.png" /></a></td>
+    </tr>
+    </table>
+  <center>
+  <center>
+    <p class='commons'>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/us/"><font color='white'>Creative Commons Attribution 3.0 United States License</font></a></font>.</p>
+    </div>
+  </center>
+
 </body>
 </html>

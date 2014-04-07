@@ -1,5 +1,5 @@
 body {
-  background-color: #000099;
+  background-color: #00458A;
   color: #fff;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -26,6 +26,7 @@ a {
 table td.idx-a {
   color: #000;
 }
+
 div {
   &.field, &.actions {
     margin-bottom: 10px; } }
@@ -61,5 +62,5 @@ div {
     font-size: 12px;
     text-align: left;
     color: #000099;
-
-t-style: square; } }
+    t-style: square; }
+}

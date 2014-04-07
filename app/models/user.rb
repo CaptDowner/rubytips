@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_secure_password
+
 #  has_many :assignments
 #  has_many :roles, :through => :assignments
   acts_as_user :roles =>  :author, :admin
@@ -32,4 +34,6 @@ end
 class Role < ActiveRecord::Base
   has_many :assignments
   has_many :users, :through => :assignments
+end
+
 end

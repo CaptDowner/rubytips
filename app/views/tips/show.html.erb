@@ -8,43 +8,44 @@
 </table>
 <p id="notice"><%= notice %></p>
 
-<table>
+<table class='redback'>
 <tr>
-  <td><b>Type:</b></td><td><%= @tip.rubytype %></td>
-  <td><b>Subject:</b></td><td><%= @tip.subject %></td>
+  <td class='reddy1'><b>Type:</b></td><td class='reddy'><%= @tip.rubytype %></td>
+  <td class='reddy1'><b>Subject:</b></td><td class='reddy'><%= @tip.subject %></td>
 </tr>
 <tr>
-  <td><b>Applies to:</b></td><td><%= @tip.applies_to %></td>
-  <td><b>Keywords:</b></td><td><%= @tip.category %></td>
+  <td class='reddy1'><b>Applies to:</b></td><td class='reddy'><%= @tip.applies_to %></td>
+  <td class='reddy1'><b>Keywords:</b></td><td class='reddy'><%= @tip.category %></td>
+</tr>
+<!-- <tr></tr> -->
+<tr>
+  <td class='reddy3' colspan='4'><b>Tip:</b></td>
 </tr>
 <tr>
-<tr>
-  <td><b>Tip:</b></td><td></td><td></td><td></td>
-</tr>
-<!--  <td class='tip' colspan='4'><code>< % = @tip.tip.html_safe %></code></td> -->
- <td class='tip' colspan='4'><code><%= raw @tip.tip %></code></td>
+ <td class='tip' colspan='4'><code><%= @tip.tip.html_safe %></code></td>
 </tr>
 <tr>
-  <td><b>Email:</b></td>
-  <td><%= obscure_email(@tip.email).html_safe %></td>
-  <td><b>Refers to:</b></td>
+  <td class='reddy1'><b>Email:</b></td>
+  <td class='reddy'><%= obscure_email(@tip.email).html_safe %></td>
+  <td class='reddy1'><b>Source:</b></td>
   <% if(@tip.xmail == nil) %>
-     <td>unknown</td>
+     <td class='reddy'>unknown</td>
   <% else %>
     <% msg ='http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/' + @tip.xmail %> 
-    <td><a href='<%= msg %>'><%= @tip.xmail %></a></td>
+    <td class='reddy'><a href='<%= msg %>'><%= @tip.xmail %></a></td>
   <% end %>
 </tr>
 </table>
-<div class='privacy'>
+<!-- <div class='privacy'> -->
+</div>
+<br/>
 <table>
   <tr>
 <!--    <td>< % = button_to 'Edit', edit_tip_path(@tip), {:class => "buttonTo", :method => "get"} %></td> -->
-    <td><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
-<!--    <td>< % = button_to 'Privacy', page_path("policy"), {:class => "buttonTo", :method => "get"} %></td> -->
-    <td><%= button_to 'About', page_path("about"), {:class => "buttonTo", :method => "get"} %></td>
+<!--    <td>< % = button_to 'Privacy', policy_page_path, {:class => "buttonTo", :method => "get"} %></td> -->
+    <td align='right'><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'About', about_page_path, {:class => "buttonTo", :method => "get"} %></td>
   </tr>
 </table> 
-</div>
 </center>
 

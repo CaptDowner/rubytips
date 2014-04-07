@@ -9,50 +9,53 @@
 
 <%= form_tag tips_path, :method => 'get'  do %>
   <p>
-    <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag "Search", name: nil %>
+   <div id='search'>
+     <%= text_field_tag :query, params[:query] %>
+     <%= submit_tag "Search", name: nil %>
+   </div>
   </p>
 <% end %>
-<%= paginate @tips %>
+<div class='tipz'>
+  <table>
+    <thead>
+      <tr>
+        <th align="left"><%= sortable "rubytype","Type" %></th>
+        <th align="left"><%= sortable "subject", "Subject" %></th>
+        <th align="left"><%= sortable "category", "Keywords" %></th>
+        <th align="left"><%= sortable "email","Email" %></th>
+        <th align="left"><%= sortable "created_at", "Posted" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
 
-<table>
-  <thead>
+      <% @tips.each do |tip| %>
+        <tr class="<%= cycle('even', 'odd') -%>">
+          <td><%= tip.rubytype %></td>
+          <td><%= tip.subject %></td>
+          <td><%= tip.category %></td>
+          <td><%= obscure_email(tip.email).html_safe %></td>
+          <td><%= tip.created_at.strftime("%m/%d/%Y") %></td>
+          <!-- <td>< % = tip.source % ></td> -->
+          <td class='idx-a'><%= link_to 'Show', tip %></td>
+          <!-- <td class='idx-a'>< % = link_to 'Edit', edit_tip_path(tip) % ></td>
+          <td class='idx-a'>< % = link_to 'Destroy', tip, confirm: 'Are you sure?', method: :delete % ></td> -->
+        </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</div> <!-- end div:tipz -->
+<br/>
+<!--
+< % = paginate @tips % ></p>
+-->
+
+<table class='foot-buttons'>
   <tr>
-
-    <th align="left"><%= sortable "rubytype","Type" %></th>
-    <th align="left"><%= sortable "subject", "Subject" %></th>
-    <th align="left"><%= sortable "category", "Keywords" %></th>
-    <th align="left"><%= sortable "email","Email" %></th>
-    <th align="left"><%= sortable "source", "Source" %></th>
-    <th></th>
-    <th></th>
-<!--    <th></th> -->
-  </tr>
-  </thead>
-  <tbody>
-<% @tips.each do |tip| %>
-  <tr class="<%= cycle('even', 'odd') -%>">
-    <td><%= tip.rubytype %></td>
-    <td><%= tip.subject %></td>
-    <td><%= tip.category %></td>
-    <td><%= obscure_email(tip.email).html_safe %></td>
-    <td><%= tip.source %></td>
-    <td class='idx-a'><%= link_to 'Show', tip %></td>
-<!--    <td class='idx-a'>< % = link_to 'Edit', edit_tip_path(tip) %></td>
-    <td class='idx-a'>< % = link_to 'Destroy', tip, confirm: 'Are you sure?', method: :delete %></td> -->
-  </tr>
-<% end %>
-
-  </tbody>
-</table>
-<p>
-<strong><%= paginate @tips %></p></strong>
-<div class='privacy'>
-<table>
-  <tr>
-    <td><%= button_to "New Tip",  new_tip_path, {:class => "buttonTo", :method => "get"} %></td>
-    <td><%= button_to 'About', page_path("about"), {:class => "buttonTo", :method => "get"} %></td>
+    <td align='right'><%= button_to 'New Tip',  new_tip_path, {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'About', about_page_path, {:class => "buttonTo", :method => "get"} %></td>
   </tr>
 </table> 
-</div>
+<!-- </div> -->
 </center>

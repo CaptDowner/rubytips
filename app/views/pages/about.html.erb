@@ -2,104 +2,106 @@
 <head>
 </head>
 <body>
-<center>
-<h1>About RubyTalkTips, Really!</h1>
-<div class="privacy">
-<table>
-<tr>
-<td>
-Over the last couple of years, I have been collecting what I consider 
-to be the best of the advice posted to the Ruby-Talk list into a mail 
-folder of mine called Ruby Talk Tips. Since I feel that I have been the 
-beneficiary of the advice posted there, I thought a way of giving back 
-might be to release an open source RoR application featuring the 536
-best tips I have collected thus far from the Ruby-Talk list.</td>
-</tr>
-<tr>
-</tr>
-<tr>
-<td><b>Note:</b> These tips have been selected by me and represent messages that I found to 
-be useful or informative about Ruby and Ruby on Rails. This is not a complete list, nor 
-does it necessarily contain the <b>BEST</b> nor the most accurate advice. By releasing it 
-to the community, the hope is that this list of tips can be used, enlarged, and improved by 
-the Ruby and RoR communities, which can make us all better programmers and bring even more 
-understanding and clarity to this language we've all grown to love. I have taken the liberty 
-of condensing the email tips  by removing greetings, signatures and other content not directly 
-relevant to the tip content. I have added keywords to each tip so that searches can be
-quick and relevant.
-</td>
-</tr>
-<tr></tr>
-<tr>
-<td class="rt-heading"><h2>Special Thanks</h2></td>
-</tr>
-<tr><td>
-Special thanks must be given to some special contributors. Robert
-Klemme was the largest single tip contributor on my list (141 tips and counting), 
-and the accuracy and quality of the tips he provides demonstrate his expertise along with 
-his willingness to share his knowledge. Special contributors 
-include folks like Ryan Davis, Brian Candler, Jesus Gabriel Galan, Josh Cheek, 
-and the contributor known as 7stud, all of whom have 10 or more tips
-that have been selected for the RubyTalkTips list. 
-Other deserving contributors include longtime community members such as James Edward Gray II, 
-David A. Black, Jake Kaiden, Jan E., Intransition, Hassan Schroeder, and Chad Perrin.</td>
-</tr>
-<tr>
-<td class="rt-heading"><h2>Contributors, Developers, Translators, and Users Needed!</h2></td>
-</tr>
-<tr>
-<td>
-We need volunteers to help us maintain, expand and improve RubyTalkTips. All feedback
-and/or suggestions are appreciated. Please let us know how you think this project can be improved.
-Interested? Email us at <a href="mailto:"captdowner@gmail.com">RubyTalkTips</a>
-</td>
-</tr>
-<tr>
-<td class="rt-heading"><h2>Rails3 project source code</h2></td>
-</tr>
-<tr><td>
-<a href="https://github.com/CaptDowner/rubytips">https://github.com/CaptDowner/rubytips</a></td>
-</tr>
-<tr><td>Please fork away! If you come up with a great idea or improvement, please submit a pull request so worthwhile changes can be added back to the RubyTalkTips github repo.</td>
-</tr>
-<tr>
-<td class="rt-heading"><h2>Features</h2></td>
-</tr>
-<tr><td><b><font size='+1'>*</font></b> Database of tips related to the Ruby language</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Tips collected from ruby-talk and rubyonrails-talk email lists</td></tr>
-<tr><td><b><font size='+1'>*</font></b> All tips are searchable by keyword</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Column sorting</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Editable (by authors of tips)</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Open posting of new tips</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Uses PostgreSQL database, enabling full text searches</td></tr>
-<tr>
-<td class="rt-heading"><h2>Todos</h2></td></tr>
-<tr><td><b><font size='+1'>*</font></b> Solicit community support to add tips, comment on features, suggest improvements. (you *may* be asked to help implement your suggestions. ;-)</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Add authentication, so that only authors of tips can update/edit their tips</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Maintain search scope when sorting columns</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Add a rating systems, and allow users to rate the tips</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Incorporate links back to the original list messages</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Add SCSS formating and styling for smartphones and tablet computers</td></tr>
-<tr><td><b><font size='+1'>*</font></b> Need translations for i18n, including Japanese, Mandarin, Spanish,
-  Hindi, Russian, Arabic, Portugese, Vietnamese, German, Italian, 
-  French, Farsi, Korean, Thai, Polish and other languages. (Volunteers
-  are all needed and welcomed!)
-</td>
-</tr>
-</table>
-</center>
-<div class='email_link'>
-Email: <a href="mailto:"captdowner@gmail.com">RubyTalkTips</a>
-</div>  <!-- end div::email_link -->
-<center>
-<div class='privacy'>
-<table>
-  <tr>
-    <td><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
-    <td><%= button_to 'Privacy', page_path("policy"), {:class => "buttonTo", :method => "get"} %></td>
-  </tr>
-</table> 
-</div> <!-- end div::privacy -->
-</center>
+  <center>
+    <h1 class='rt-head-top'><img src='/favicon.ico' 'alt='ruby icon' />&nbsp;&nbsp; About RubyTalkTips &nbsp;&nbsp;<img src='/favicon.ico' 'alt='ruby icon' />
+    </h1>
+    <div class="about">
+      <table>
+        <tr>
+          <td>Over the last couple of years, I have been collecting what I consider 
+              the best advice posted to the Ruby-Talk list into a mail 
+              folder of mine called Ruby Talk Tips. Since I feel that I have been the 
+              beneficiary of the advice posted there, I thought a way of giving back 
+              might be to release an open source Rails application featuring the 
+              best tips I have collected thus far from the Ruby-Talk list.
+          </td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td><b>Note:</b> These tips have been selected by me and represent messages that I found to 
+              be useful or informative about Ruby and Ruby on Rails. This is not a complete list, nor 
+              does it necessarily contain the <b>BEST</b> nor the most accurate advice. By releasing it 
+              to the community, the hope is that this list of tips can be used, enlarged, and improved by 
+              the Ruby and Rails communities, which can make us all better programmers and bring even more 
+              understanding and clarity to this language we've all grown to love. I have taken the liberty 
+              of condensing the email tips  by removing greetings, signatures and other content not directly 
+              relevant to the tip content. I have added keywords to each tip so that searches can be
+              quick and relevant.
+          </td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td class="rt-heading"><h2>Special Thanks</h2></td>
+        </tr>
+        <tr>
+          <td>Special thanks must be given to some special contributors. Robert
+              Klemme was the largest single tip contributor on my list (141 tips and counting), 
+              and the accuracy and quality of the tips he provides demonstrate his expertise along with 
+              his willingness to share his knowledge. Special contributors 
+              include folks like Ryan Davis, Brian Candler, Jesus Gabriel Galan, Josh Cheek, 
+              and the contributor known as 7stud, all of whom have 10 or more tips
+              that have been selected for the RubyTalkTips list. 
+              Other deserving contributors include longtime community members such as James Edward Gray II, 
+              David A. Black, Jake Kaiden, Jan E., Intransition, Hassan Schroeder, and Chad Perrin.
+          </td>
+        </tr>
+        <tr>
+          <td class="rt-heading"><h2>Contributors, Developers, Translators, and Users Needed!</h2></td>
+        </tr>
+        <tr>
+          <td>We need volunteers to help us maintain, expand and improve RubyTalkTips. All feedback
+              and/or suggestions are appreciated. Please let us know how you think this project can be improved.
+              Interested? Email us at <a href="mailto:"captdowner@gmail.com">RubyTalkTips</a>
+          </td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td class="rt-heading"><h2>Rails project source code</h2></td>
+        </tr>
+        <tr><td>
+          <a href="https://github.com/CaptDowner/rubytips">&nbsp;https://github.com/CaptDowner/rubytips&nbsp;</a></td>
+        </tr>
+          <tr><td>Please fork away! If you come up with a great idea or improvement, please submit a pull request so worthwhile changes can be added back to the RubyTalkTips github repo.</td>
+        </tr>
+        <tr>
+          <td class="rt-heading"><h2>Features</h2></td>
+        </tr>
+        <tr><td><b><font size='+1'>*</font></b> Database of tips related to the Ruby language</td></tr>
+        <tr><td><b><font size='+1'>*</font></b> Tips collected from ruby-talk and rubyonrails-talk email lists</td></tr>
+        <tr><td><b><font size='+1'>*</font></b> All tips are searchable by keyword</td></tr>
+        <tr><td><b><font size='+1'>*</font></b> Column sorting</td></tr>
+        <tr><td><b><font size='+1'>*</font></b> Editable (by authors of tips)</td></tr>
+        <tr><td><b><font size='+1'>*</font></b> Open posting of new tips</td></tr>
+        <tr><td><b><font size='+1'>*</font></b> Uses PostgreSQL database, enabling full text searches</td></tr>
+        <tr><td class="rt-heading"><h2>Todos</h2></td></tr>
+        <tr><td><b><font size='+1'>*</font></b> Solicit community support to add tips, comment on features, suggest improvements. (you *may* be asked to help implement your suggestions.)</td></tr>
+        <tr><td><b><font size='+1'>*</font></b> Add authentication, so that only authors of tips can update/edit their tips</td></tr>
+        <tr><td><b><font size='+1'>*</font></b> Maintain search scope when sorting columns</td></tr>
+        <tr><td><b><font size='+1'>*</font></b> Add a rating systems, and allow users to rate the tips</td></tr>
+        <tr><td><b><font size='+1'>*</font></b> Incorporate links back to the original list messages</td></tr>
+        <tr><td><b><font size='+1'>*</font></b> Add SCSS formating and styling for smartphones and tablet computers</td></tr>
+        <tr>
+          <td><b><font size='+1'>*</font></b> Need translations for i18n, including Japanese, Mandarin, Spanish,
+                                              Hindi, Russian, Arabic, Portugese, Vietnamese, German, Italian, 
+                                              French, Farsi, Korean, Thai, Polish and other languages. (Volunteers
+                                              are all needed and welcomed!)
+          </td>
+        </tr>
+      </table>
+    </center>
+  <div class='email_link'>
+  Email: <a href="mailto:"captdowner@gmail.com">&nbsp; RubyTalkTips &nbsp; </a>
+  </div>  <!-- end div::email_link -->
+  <center>
+    <div class='policytable'>
+      <table class='foot-buttons'>
+        <tr>
+          <td align='right'><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
+          <td><%= button_to 'Privacy', policy_page_path, {:class => "buttonTo", :method => "get"} %></td>
+        </tr>
+      </table> 
+    </div> <!-- End div:policytable -->
+  </center>
 </body>
 </html>

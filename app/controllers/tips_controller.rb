@@ -1,20 +1,10 @@
 class TipsController < ApplicationController
-  # GET /tips
-  # GET /tips.json
-  def index
-#    @tips = Tip.order(sort_column + ' ' + sort_direction).page params[:page]
+  before_action :set_tip, only: [:show, :edit, :update, :destroy]
 
-    @tips = Tip.text_search(params[:query]).order(sort_column + ' ' + sort_direction).page(params[:page])
-=begin
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tips }
-    end
-=end
+  def index
+   @tips = Tip.text_search(params[:query]).order(sort_column + ' ' + sort_direction).page(params[:page])
   end
 
-  # GET /tips/1
-  # GET /tips/1.json
   def show
     @tip = Tip.find(params[:id])
 
@@ -25,7 +15,6 @@ class TipsController < ApplicationController
   end
 
   # GET /tips/new
-  # GET /tips/new.json
   def new
     @tip = Tip.new
 
@@ -35,63 +24,59 @@ class TipsController < ApplicationController
     end
   end
 
-  # GET /tips/1/edit
   def edit
-    @tip = Tip.find(params[:id])
   end
 
-  # POST /tips
-  # POST /tips.json
   def create
-    @tip = Tip.new(params[:tip])
+    @tip = Tip.new(tip_params)
 
     respond_to do |format|
       if @tip.save
         format.html { redirect_to @tip, notice: 'Tip was successfully created.' }
-        format.json { render json: @tip, status: :created, location: @tip }
+        format.json { render action: 'show', status: :created, location: @tip }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @tip.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PUT /tips/1
-  # PUT /tips/1.json
   def update
-    @tip = Tip.find(params[:id])
-
     respond_to do |format|
-      if @tip.update_attributes(params[:tip])
+      if @tip.update(tip_params)
         format.html { redirect_to @tip, notice: 'Tip was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render action: 'show', status: :ok, location: @tip }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @tip.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /tips/1
-  # DELETE /tips/1.json
   def destroy
-    @tip = Tip.find(params[:id])
     @tip.destroy
-
     respond_to do |format|
       format.html { redirect_to tips_url }
       format.json { head :no_content }
     end
   end
-  
+
   private
-  
-  def sort_column
+    # Use callbacks to share common setup or constraints between actions.
+   def sort_column
     params[:sort] || "subject"
-  end
-  
-  def sort_direction
-    params[:direction] || "asc"
-  end
-  
+   end
+
+   def sort_direction
+     params[:direction] || "asc"
+    end
+
+    def set_tip
+      @tip = Tip.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def tip_params
+      params.require(:tip).permit(:source, :rubytype, :subject, :category, :tip, :applies_to, :email, :posted, :firstname, :lastname, :xmail)
+    end
 end
