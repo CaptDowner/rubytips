@@ -1,58 +1,70 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'thin'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.1.0.rc1'
+gem 'thin',  '>= 1.6.1'
+# Use postgresql as the database for Active Record
 gem 'pg'
-gem 'activerecord', '>= 3.2.2'
-gem 'htmlentities'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.1'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'kaminari'
-gem 'pg_search', '>= 0.4.2'
-gem 'texticle', require: 'texticle/rails'
-gem 'high_voltage', '>= 1.1.1'
+gem 'pg_search', '>= 0.7.3'
+gem 'textacular'
+# gem 'high_voltage', '>= 1.1.1'
 gem 'mail', '>= 2.4.4'
-gem 'warden', '>= 1.1.1'
-gem 'orm_adapter', '>= 0.0.7'
-gem 'devise', '~> 2.1.0'
-gem 'cancan', '~> 1.6.7'
-gem 'role_model', '~> 0.7.1'
-gem 'canard', '~> 0.3.4'
-
-gem 'rainbow'
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platform => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
-end
-
+gem 'therubyracer',  platforms: :ruby
+gem 'obfuscate', '>= 0.0.7'
+# Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.0'
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', '~> 0.4.0',          group: :doc
+# devise is used for user authentication
+gem 'devise', '>= 3.2.4'
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring',        group: :development
 
-group :test do
-  gem 'minitest'
-  gem 'turn', '>= 0.9.5'
-  gem 'capybara'
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '>= 3.1.7'
+
+# select regexp_replace(field, E'[\\n\\r]+', ' ', 'g' )
+#
+# 
+
+group :test, :development do
+  gem 'pry', '>= 0.9.12.6'
+  gem 'pry-git', '>= 0.2.3'
+  gem 'pry-rails', '>= 0.3.2'
+  gem 'jazz_hands', '>= 0.5.2'
+  gem 'pry-debugger', '>= 0.2.2'
+  gem 'minitest', '>= 5.3.2'
+  gem 'pry-stack_explorer', '>= 0.4.9.1'
+  gem 'guard', '>= 2.5.1'
+  gem 'guard-rspec', '>= 4.2.8'
+  gem 'rspec', '>= 2.14.1'
+  gem 'spork', '>= 1.0.0rc4'
+  gem 'rspec-rails', '>= 2.14.1'
+  gem 'factory_girl_rails', '>= 4.4.1'
+  gem 'database_cleaner', '>= 1.2.0'
+  gem 'email_spec', '>= 1.5.0'
+#  gem 'turn', '>= 0.9.5'
+  gem "capybara", "2.2.1"
 end
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
 
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
 
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+# Use debugger
+# gem 'debugger', group: [:development, :test]
+
