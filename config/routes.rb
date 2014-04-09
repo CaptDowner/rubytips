@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resource :session
+  resources :users
+
   # Root of your site routed with "root ..."
   root 'pages#about'
 

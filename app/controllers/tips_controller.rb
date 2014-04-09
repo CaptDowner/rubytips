@@ -1,4 +1,5 @@
 class TipsController < ApplicationController
+#  before_filter :authenticate_user!
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -61,22 +62,22 @@ class TipsController < ApplicationController
     end
   end
 
-  private
+private
     # Use callbacks to share common setup or constraints between actions.
-   def sort_column
+  def sort_column
     params[:sort] || "subject"
-   end
+  end
 
-   def sort_direction
+  def sort_direction
      params[:direction] || "asc"
-    end
+  end
 
-    def set_tip
-      @tip = Tip.find(params[:id])
-    end
+  def set_tip
+    @tip = Tip.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def tip_params
-      params.require(:tip).permit(:source, :rubytype, :subject, :category, :tip, :applies_to, :email, :posted, :firstname, :lastname, :xmail)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def tip_params
+    params.require(:tip).permit(:source, :rubytype, :subject, :category, :tip, :applies_to, :email, :posted, :firstname, :lastname, :xmail)
+  end
 end

@@ -1,6 +1,74 @@
-<h1>Editing user</h1>
+<table class='tip-top'>
+  <tr>
+    <td><img src='/assets/ruby.png' width='15' height='15'></td>
+    <td><h1>Edit Ruby Talk Tips User</h1></td>
+    <td><img src='/assets/ruby.png' width='15' height='15'></td>
+  </tr>
+</table>
+<br/>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
-<%= render 'form' %>
+<%= form_for(@user) do |f| %>
+  <table>
+    <tr>
+      <div class="field">
+      <td class='reddy1'><%= f.label :firstname, "Firstname:" %></td><td><%= f.text_field :firstname, size: 40, autofocus: true %></td>
+      </div>
+    </tr>
+    <tr>
+      <div class="field">
+        <td class="reddy1"><%= f.label :lastname, "Lastname:" %></td><td><%= f.text_field :lastname, size: 40 %></td>
+      </div>
+    </tr>
+    <tr>
+      <div class="field">
+        <td class="reddy1"><%= f.label :email, "Email:" %></td><td><%= f.text_field :email, size: 40 %></td>
+      </div>
+    </tr>
+      <div class="field">
+        <td class="reddy1"><%= f.label :password, "Password:" %></td><td><%= f.password_field :password, size: 40 %></td>
+      </div>
+    </tr>
+    <tr>
+      <div>
+        <td class="reddy1"><%= f.label :password_confirmation, "Confirm Password:" %></td><td><%= f.password_field :password_confirmation, size: 40 %></td>
+      </div>
+    </tr>
+  </table>
+<br/>
+  <div class="actions">
+    <td><%= f.submit %></td>
+  </div>
+<% end %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+  <table class='foot-buttons'>
+    <tr>
+      <td><%= button_to 'Tips', tips_path, {:class => "buttonTo", :method => "get"} %></td>
+      <td><%= button_to 'About', root_path, {:class => "buttonTo", :method => "get"} %></td>
+      <td><%= button_to 'Show User', user_path(@user),  {:class => "buttonTo", :method => "get"} %> </td>
+      <td> <%= button_to 'Users', users_path,  {:class => "buttonTo", :method => "get"}  %></td>
+  </tr>
+  </table>
+<!--
+    <footer>
+      <nav>
+        <table>
+          <tr>
+            <td>< % = f.submit %></td>
+            <td>< % = button_to 'Show User', user_path(@user) %> </td>
+            <td> < % = button_to 'Users', users_path %></td>
+          </tr>
+        </table>
+      </nav>
+    </footer>
+-->
+

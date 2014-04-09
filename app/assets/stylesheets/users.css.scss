@@ -1,3 +1,57 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.userz table {
+  width: 42%;
+  margin-left: 29%;
+  margin-right: 29%;
+}
+
+.userz th, th {
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #023468;
+  padding: 4px 8px;
+  padding-bottom: 4px;
+  text-align: left;
+}
+
+//.userz tr.odd {
+//  background-color: #005EBD;
+//  color: #fff;
+//}
+
+//.userz tr.even {
+//  background-color: #6f7b93;
+//  color: #fff;
+//}
+
+//.uzer-table tr {
+//  background: #005EBD;
+//}
+
+//.uzer-table tr:nth-child(odd) {
+//  background: #6F7B93;
+//}
+
+// .uzer-table tr.odd { background: #005ebd; }
+
+th.header {
+  background: #023468;
+}
+
+tr.NormRow { background-color: #6F7B93; }
+tr.AltRow  { background-color: #005EBD; }
+
+td.e-mail {
+  width: 40%;
+}
+
+td.sed {
+  width: 10%;
+}
+
+.uzer-show table {
+  width: 24%;
+}

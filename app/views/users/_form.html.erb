@@ -1,43 +1,10 @@
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %>
-        prohibited this user from being saved:</h2>
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <fieldset>
-  <legend>Enter User Details</legend>
-
-  <div>
-    <%= f.label :email %>:
-    <%= f.text_field :email, :size => 40 %>
+<header id='page-header">
+  <div id="masthead">
+    <h1><%= link_to 'Tips', tips_path, method: "get" %></h1>
+    <nav>
+      <p>
+      <%= link_to "Register", new_user_path, class: "button" %>
+      </p>
+    </nav>
   </div>
-
-  <div>
-    <%= f.label :encrypted_password, 'Password' %>:
-    <%= f.password_field :encrypted_password, :size => 40 %>
-  </div>
-
-
-  <div>
-    <%= f.label :password_confirmation, 'Confirm' %>:
-    <%= f.password_field :password_confirmation, :size => 40 %>
-  </div>
-
-  <div>
-    <%= f.label :role, 'Role' %>
-    <%= f.text_field :role, :size => 40 %>
-  </div>  
-
-  <div>
-    <%= f.submit %>
-  </div>
-
-  </fieldset>
-<% end %>
+</header>

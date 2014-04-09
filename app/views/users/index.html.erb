@@ -1,45 +1,49 @@
-<!-- START:notice -->
-<h1>Listing users</h1>
+<script>
+$('.userz table').tablesorter({
+   widgets: ['zebra'],
+   widgetZebra: {css: ["NormRow","AltRow"]} // css classes to apply to rows
+});
+</script>
 
-<!-- START_HIGHLIGHT -->
-<p id="notice"><%= notice %></p>
-
-<!-- END_HIGHLIGHT -->
-<!-- ... -->
-<!-- END:notice -->
-<table>
+<table class='tip-top'>
   <tr>
-    <th>Email</th>
-    <th>Encrypted Password</th>
-    <th>Reset Password Token</th>
-    <th>Role</th>
-    <th>Remember Created At</th>
-    <th>Sign In Count</th>
-    <th>Current Sign In At</th>
-    <th>Last Sign In At</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <td><img src='/assets/ruby.png' width='15' height='15'></td>
+    <td><h1>Ruby Talk Tips Users</h1></td>
+    <td><img src='/assets/ruby.png' width='15' height='15'></td>
   </tr>
+</table>
+<br/>
 
-<% @users.each do |user| %>
+
+<div class='userz'>
+  <table>
+    <thead>
+      <tr>
+        <th align="left"><%= sortable "firstname", "Firstname" %></th>
+        <th align="left"><%= sortable "lastname", "Lastname" %></th>
+        <th align="left"><%= sortable "email", "Email" %></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr class="<%= cycle('NormRow', 'AltRow') %>">
+          <td><%= user.firstname %></td>
+          <td><%= user.lastname %></td>
+          <td class='e-mail'><%= user.email %></td>
+          <td class='sed'>&nbsp;&nbsp;<%= link_to 'Show', user %>&nbsp;&nbsp;<%= link_to 'Edit', edit_user_path(user) %>&nbsp;&nbsp;<%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div> <!-- end div:userz -->
+
+<table class='foot-buttons'>
   <tr>
-    <td><%= user.email %></td>
-    <td><%= user.encrypted_password %></td>
-    <td><%= user.reset_password_token %></td>
-    <td><%= user.role %></td>
-    <td><%= user.remember_created_at %></td>
-    <td><%= user.sign_in_count %></td>
-    <td><%= user.current_sign_in_at %></td>
-    <td><%= user.last_sign_in_at %></td>
-
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td align='right'><%= button_to 'New User',  new_user_path, {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'Tips', tips_path, {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'About', root_path, {:class => "buttonTo", :method => "get"} %></td>
   </tr>
-<% end %>
 </table>
 
-<br />
-
-<%= link_to 'New User', new_user_path %>

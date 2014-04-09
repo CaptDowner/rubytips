@@ -15,13 +15,22 @@ table {
 
 table.foot-buttons {
   border: none;
+  margin-top: 4pt;
+  padding-top: 4pt;
 }
 
 .tipz table {
-  width: 80%;
-  margin-left:10%;
-  margin-right: 10%;
+  width: 64%;
+  margin-left:18%;
+  margin-right: 18%;
 }
+
+tr.NormRow { background-color: #67FB93; }
+//#67FB93; }
+
+tr.AltRow  { background-color: #005EBD; }
+//#005EBD; }
+
 
 table.redback {
   background-color: #00458A;
@@ -97,7 +106,9 @@ p.commons a:hover{
 table th{
   font-size: 13px;
   color: #000000;
-  background-color: #005EBD;
+  background-color: #023468;
+//004082;
+//005EBD;
   padding: 4px 8px;
   padding-bottom: 4px;
   text-align: left;
@@ -108,8 +119,9 @@ table.tip-top {
   padding: 10px 0 10px 0;
   margin-top: 0px;
   margin-bottom: -16px;
-  margin-left: 22px;
-  margin-right: 22px;
+  width: 32%;
+  margin-left: 34%;
+  margin-right: 34%;
 }
 
 h1 {
@@ -128,6 +140,7 @@ h1 {
   height: 18pt;
   padding: 3% 6% 3% 6%;
   margin:  2pt 6pt 0 6pt;
+  text-align: center;
 }
 
 .tip-top td {

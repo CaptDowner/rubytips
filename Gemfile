@@ -35,10 +35,6 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '>= 3.1.7'
 
-# select regexp_replace(field, E'[\\n\\r]+', ' ', 'g' )
-#
-# 
-
 group :test, :development do
   gem 'pry', '>= 0.9.12.6'
   gem 'pry-git', '>= 0.2.3'

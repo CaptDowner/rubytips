@@ -31,15 +31,17 @@ div {
   &.field, &.actions {
     margin-bottom: 10px; } }
 
-#notice {
-  color: green; }
+p.notice, #notice {
+  color: #b2ffb9; 
+}
 
-.field_with_errors {
+.field_with_errors input {
   padding: 2px;
-  background-color: #c40400;
+//  background-color: #c40400;
   display: table; 
-  border: 1px;
+  border: 1px red solid;
   }
+
 
 #error_explanation {
   width: 450px;

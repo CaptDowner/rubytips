@@ -1,49 +1,29 @@
-<p id="notice"><%= notice %></p>
+<table class='tip-top'>
+  <tr>
+    <td><img src='/assets/ruby.png' width='15' height='15'></td>
+    <td><h1>Ruby Talk Tips Users</h1></td>
+    <td><img src='/assets/ruby.png' width='15' height='15'></td>
+  </tr>
+</table>
 
-<p>
-  <b>Email:</b>
-  <%= @user.name %>
-</p>
+<div class='uzer-show'>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-<p>
-  <b>Hashed password:</b>
-  <%= @user.hashed_password %>
-</p>
+  <table>
+    <tr><td class="reddy1">Firstname:</td><td><%= @user.firstname %></td></tr>
+    <tr><td class="reddy1">Lastname:</td><td><%= @user.lastname %></td></tr>
+    <tr><td class="reddy1">Email:</td><td><%= @user.email %></td></tr>
+    <tr><td class="reddy1"></td><td></td></tr>
+  </table>
 
-<p>
-  <b>Role:</b>
-  <%= @user.role %>
-</p>
+</div> <!-- end div:uzer-show -->
 
-<p>
-  <b>Salt:</b>
-  <%= @user.salt %>
-</p>
+  <table class='foot-buttons'>
+    <tr>
+      <td align='right'><%= button_to 'Edit User', edit_user_path(@user), {:class => "buttonTo", :method => "get"} %></td>
+      <td><%= button_to 'Users', users_path, {:class => "buttonTo", :method => "get"} %></td>
+      <td><%= button_to 'Delete', @user, :method => "delete", data: { confirm: "Delete user: #{@user.firstname} #{@user.lastname}?"} %></td>
+   </tr>
+  </table>
 
-<p>
-  <b>Sign in count:</b>
-  <%= @user.sign_in_count %>
-</p>
-
-<p>
-  <b>Signed in:</b>
-  <%= @user.current_sign_in_at %>
-</p>
-
-<p>
-  <b>Prior Signed in:</b>
-  <%= @user.last_sign_in_at %>
-</p>
-
-<p>
-  <b>Remember Created at:</b>
-  <%= @user.remember_created_at %>
-</p>
-
-<p>
-  <b>Reset Password token:</b>
-  <%= @user.reset_password_token %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

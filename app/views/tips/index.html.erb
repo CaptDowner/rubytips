@@ -1,3 +1,11 @@
+<script>
+$('.tipz table').tablesorter({
+   widgets: ['zebra'],
+   widgetZebra: {css: ["NormRow","AltRow"]} // css classes to apply to rows
+});
+</script>
+
+
 <center>
 <table class='tip-top'>
   <tr>
@@ -30,7 +38,7 @@
     <tbody>
 
       <% @tips.each do |tip| %>
-        <tr class="<%= cycle('even', 'odd') -%>">
+        <tr class="<%= cycle('NormRow', 'AltRow') %>">
           <td><%= tip.rubytype %></td>
           <td><%= tip.subject %></td>
           <td><%= tip.category %></td>

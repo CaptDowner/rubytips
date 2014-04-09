@@ -2,13 +2,13 @@
 <html>
 <head>
 <title>Ruby Talk Tips</title>
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" /
+
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script type="text/javascript" src="/assets/jquery-latest.js"></script>
-  <script type="text/javascript" src="/assets/tablesorter.js"></script>
-
-  <%= csrf_meta_tags %>
+  <script type="text/javascript" src="/assets/jquery.tablesorter.js"></script>
+<!--  < % = csrf_meta_tags %> -->
 
 <style type="text/css">
   code { white-space: pre; }
@@ -17,9 +17,7 @@
 </head>
 <body>
 <center>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
+ <%= yield %>
   <br />
   <center>
     <div id='cc-by'>
