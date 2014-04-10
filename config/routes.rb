@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resource :session
+
+  get 'signup' => 'users#new'
   resources :users
 
   # Root of your site routed with "root ..."
@@ -8,8 +10,8 @@ Rails.application.routes.draw do
   resources :tips
   #--------------------------------------------------------------------------
   # These individual routes:
-  get '/about'  => 'pages#about',  as: :about_page
-  get '/policy' => 'pages#policy', as: :policy_page
+  get 'about'  => 'pages#about',  as: :about_page
+  get 'policy' => 'pages#policy', as: :policy_page
 
   # -> are replaced by the following action setup for the PagesController
   # place all static pages in the ../app/views/pages directory
