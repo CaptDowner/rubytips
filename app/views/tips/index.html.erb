@@ -63,6 +63,9 @@ $('.tipz table').tablesorter({
   <tr>
     <td align='right'><%= button_to 'New Tip',  new_tip_path, {:class => "buttonTo", :method => "get"} %></td>
     <td><%= button_to 'About', about_page_path, {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to "Sign In", new_session_path, {class: "button", method: "get"} %>
+    <td><%= button_to "Register", signup_path, { class: "button", method: "get"} %>
+
   </tr>
 </table> 
 <!-- </div> -->
