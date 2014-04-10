@@ -4,4 +4,8 @@ module ApplicationHelper
     direction = (column == params[:sort] && params[:direction] == "asc") ? "desc" : "asc"
     link_to title, :sort => column, :direction => direction
   end
+
+  def current_user
+    User.find(session[:user_id]) if session[:user_id]
+  end
 end
