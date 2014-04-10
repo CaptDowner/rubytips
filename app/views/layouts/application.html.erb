@@ -17,6 +17,11 @@
 </head>
 <body>
 <center>
+
+<% flash.each do |key, value| %>
+  <%= content_tag(:p, value, :class => "flash #{key}") %>
+<% end %>
+
  <%= yield %>
   <br />
   <center>
@@ -34,3 +39,4 @@
 
 </body>
 </html>
+
