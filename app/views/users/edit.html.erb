@@ -49,26 +49,18 @@
     <td><%= f.submit %></td>
   </div>
 <% end %>
+  <footer>
+    <nav>
+ 
+      <table class='foot-buttons'>
+        <tr>
+          <td><%= button_to 'Tips',      tips_path,        {class: 'button', method: :get } %></td>
+          <td><%= button_to 'About',     root_path,        {class: 'button', method: :get } %></td>
+          <td><%= button_to 'Show User', user_path(@user), {class: 'button', method: :get } %> </td>
+          <td><%= button_to 'Users',     users_path,       {class: 'button', method: :get } %></td>
+      </tr>
+      </table>
+    </nav>
+  </footer>
 
-  <table class='foot-buttons'>
-    <tr>
-      <td><%= button_to 'Tips', tips_path, {:class => "buttonTo", :method => "get"} %></td>
-      <td><%= button_to 'About', root_path, {:class => "buttonTo", :method => "get"} %></td>
-      <td><%= button_to 'Show User', user_path(@user),  {:class => "buttonTo", :method => "get"} %> </td>
-      <td> <%= button_to 'Users', users_path,  {:class => "buttonTo", :method => "get"}  %></td>
-  </tr>
-  </table>
-<!--
-    <footer>
-      <nav>
-        <table>
-          <tr>
-            <td>< % = f.submit %></td>
-            <td>< % = button_to 'Show User', user_path(@user) %> </td>
-            <td> < % = button_to 'Users', users_path %></td>
-          </tr>
-        </table>
-      </nav>
-    </footer>
--->
 
