@@ -53,9 +53,12 @@
 <% end %>
   <table class='foot-buttons'>
     <tr>
-      <td><%= button_to 'Tips', tips_path, {:class => "buttonTo", :method => "get"} %></td>
-      <td><%= button_to 'About', root_path, {:class => "buttonTo", :method => "get"} %></td>
-      <td><%= button_to 'Privacy', policy_page_path, {:class => "buttonTo", :method => "get"} %></td>
+      <% if !current_user %>
+      <% else %>
+      <% end %>
+        <td><%= button_to 'Tips', tips_path, {:class => "buttonTo", :method => "get"} %></td>
+        <td><%= button_to 'About', root_path, {:class => "buttonTo", :method => "get"} %></td>
+        <td><%= button_to 'Privacy', policy_page_path, {:class => "buttonTo", :method => "get"} %></td>
   </tr>
   </table>
 <br/>
