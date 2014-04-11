@@ -1,0 +1,20 @@
+<header id="page-header">
+  <div id="masthead">
+  <h1><%= link_to 'Tips', tips_path %></h1>
+    <nav>
+      <p>
+        <% if current_user %>
+          <%= link_to current_user.firstname, current_user %>
+          <%= link_to "Sign Out", session_path, method: :delete, class: "button" %>
+        <% else %>
+          <%= link_to "Register", signup_path, class: "button" %>
+          <%= link_to "Sign In", new_session_path, class: "button" %>
+        <% end %>
+      </p>
+    </nav>
+  </div>
+</header>
+
+
+
+

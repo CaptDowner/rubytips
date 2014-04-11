@@ -13,11 +13,6 @@ $('.userz table').tablesorter({
   </tr>
 </table>
 <br/>
-<!--
-<header id="content-header">
-  <h1>< % = pluralize(@users.size, 'User') %></h1>
-</header>
--->
 <div class='userz'>
   <table>
     <thead>
@@ -35,7 +30,7 @@ $('.userz table').tablesorter({
           <td><%= user.firstname %></td>
           <td><%= user.lastname %></td>
           <td class='e-mail'><%= user.email %></td>
-          <td class='sed'>&nbsp;&nbsp;<%= link_to 'Show', user %>&nbsp;&nbsp;<%= link_to 'Edit', edit_user_path(user) %>&nbsp;&nbsp;<%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;</td>
+          <td class='sed'>&nbsp;&nbsp;<%= link_to 'Show', user %>&nbsp;&nbsp;<%= link_to 'Edit', edit_user_path(user) %>&nbsp;</td>
         </tr>
       <% end %>
     </tbody>
@@ -44,7 +39,7 @@ $('.userz table').tablesorter({
 
 <table class='foot-buttons'>
   <tr>
-    <td align='right'><%= button_to 'New User',  new_user_path, {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'New User',  new_user_path, {:class => "buttonTo", :method => "get"} %></td>
     <td><%= button_to 'Tips', tips_path, {:class => "buttonTo", :method => "get"} %></td>
     <td><%= button_to 'About', root_path, {:class => "buttonTo", :method => "get"} %></td>
   </tr>

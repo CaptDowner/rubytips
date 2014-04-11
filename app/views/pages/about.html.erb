@@ -76,10 +76,8 @@
         <tr><td><b><font size='+1'>*</font></b> Uses PostgreSQL database, enabling full text searches</td></tr>
         <tr><td class="rt-heading"><h2>Todos</h2></td></tr>
         <tr><td><b><font size='+1'>*</font></b> Solicit community support to add tips, comment on features, suggest improvements. (you *may* be asked to help implement your suggestions.)</td></tr>
-        <tr><td><b><font size='+1'>*</font></b> Add authentication, so that only authors of tips can update/edit their tips</td></tr>
         <tr><td><b><font size='+1'>*</font></b> Maintain search scope when sorting columns</td></tr>
         <tr><td><b><font size='+1'>*</font></b> Add a rating systems, and allow users to rate the tips</td></tr>
-        <tr><td><b><font size='+1'>*</font></b> Incorporate links back to the original list messages</td></tr>
         <tr><td><b><font size='+1'>*</font></b> Add SCSS formating and styling for smartphones and tablet computers</td></tr>
         <tr>
           <td><b><font size='+1'>*</font></b> Need translations for i18n, including Japanese, Mandarin, Spanish,
@@ -99,7 +97,9 @@
         <tr>
           <td align='right'><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
           <td><%= button_to 'Privacy', policy_page_path, {:class => "buttonTo", :method => "get"} %></td>
-        </tr>
+          <td><%= button_to "Sign In", new_session_path, {class: "button", method: "get"} %>
+          <td><%= button_to "Register", signup_path, { class: "button", method: "get"} %>
+       </tr>
       </table> 
     </div> <!-- End div:policytable -->
   </center>

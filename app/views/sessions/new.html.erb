@@ -13,16 +13,18 @@
     <table>
        <tr>
          <td class='reddy1'><%= label_tag :email, "Email:" %></td>
-         <td><%= email_field_tag :email, nil, autofocus: true %></td></tr>
+         <td><%= email_field_tag :email, nil, autofocus: true  %></td></tr>
          <td class='reddy1'><%= label_tag :password, "Password:" %></td>
          <td><%= password_field_tag :password, nil %></td>
       </tr>
     </table>
+    <p><%= submit_tag "Sign In" %></p>
+    <p><%= button_to "Register", signup_path, { class: "button", method: "get"} %></p>
 
-    <p>
-      <%= submit_tag "Sign In" %>
-    </p>
-  </div> <!-- end div:signin -->
+<!-- "$ ( 'form_id').action=' # { user_path(user.id)}';$('form_id').submit();"' %></p> -->
+
+  </div>   <!-- end div:signin -->
   </fieldset>
+<!--  < % = button_to "Register", name: 'register' %> -->
 
 <% end %>
