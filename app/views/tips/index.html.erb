@@ -61,13 +61,13 @@ $('.tipz table').tablesorter({
 
 <table class='foot-buttons'>
   <tr>
-    <td><%= button_to 'About', about_page_path, {:class => "buttonTo", :method => "get"} %></td>
+    <td><%= button_to 'About',      about_page_path,  { class: "button", method: "get"} %></td>
     <% if !current_user %>
-      <td><%= button_to "Sign In", new_session_path, {class: "button", method: "get"} %>
-      <td><%= button_to "Register", signup_path, { class: "button", method: "get"} %>
+      <td><%= button_to "Sign In",  new_session_path, { class: "button", method: "get"} %>
+      <td><%= button_to "Register", signup_path,      { class: "button", method: "get"} %>
     <% else %>
-     <td align='right'><%= button_to 'New Tip',  new_tip_path, {:class => "buttonTo", :method => "get"} %></td>
-     <td><%= button_to 'Sign Out', session_path, method: :delete %></td>
+     <td><%= button_to 'New Tip',   new_tip_path,     { :class => "buttonTo", :method => "get"} %></td>
+     <td><%= button_to 'Sign Out',  session_path,     { method: :delete } %></td>
     <% end %>
 
   </tr>
