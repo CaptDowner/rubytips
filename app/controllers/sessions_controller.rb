@@ -5,13 +5,18 @@ class SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def new
+    if current_user
+      flash[:alert] = "You are already signed in as #{current_user.firstname} #{current_user.lastname}!"
+    else
+    end
   end
 
   def create
     if user = User.authenticate(params[:email], params[:password])
       session[:user_id] = user.id
       flash[:notice] = "Welcome back, #{user.firstname}!"
-      redirect_to (session[:intended_url] || user)
+      redirect_to (session[:intended_url] || tips_path)
+# user)
       session[:intended_url] = nil
    else
       if user
