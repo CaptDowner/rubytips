@@ -6,7 +6,8 @@
   </tr>
 </table>
 
-
+<p class='signin-msg'>Sign in to access advanced site features.</p>
+<p class='signin-msg'> Registration is required prior to signing in.</p>
 <%= form_tag(session_path) do %>
   <fieldset>
   <div class='signin'>
@@ -18,9 +19,24 @@
          <td><%= password_field_tag :password, nil %></td>
       </tr>
     </table>
-    <p><%= submit_tag "Sign In" %></p>
-    <p><%= button_to "Register", signup_path, { class: "button", method: "get"} %></p>
-
+  <table class='foot-buttons'>
+    <tr>
+      <% if !current_user %>
+        <td><%= submit_tag "Sign In" %></td>
+        <td><%= button_to "Register", signup_path,      { class: "button", method: "get"} %>
+      <% else %>
+      <!-- Issue an alert message that you are already signed in as firstname/lastname -->
+        <td><%= button_to 'Sign Out', session_path, method: :delete %></td>
+      <% end %>
+        <td><%= button_to 'About',    about_page_path,  {:class => "buttonTo", :method => "get"} %></td>
+        <td><%= button_to 'Privacy',  policy_page_path, {:class => "buttonTo", :method => "get"} %></td>
+        <td><%= button_to "Tips",     tips_path,        {:class => "buttonTo", :method => "get"} %></td>
+   </tr>
+  </table> 
+<!--
+    <p>< % = submit_tag "Sign In" %></p>
+    <p>< % = button_to "Register", signup_path, { class: "button", method: "get"} %></p>
+-->
 <!-- "$ ( 'form_id').action=' # { user_path(user.id)}';$('form_id').submit();"' %></p> -->
 
   </div>   <!-- end div:signin -->
