@@ -1,3 +1,4 @@
+<!-- Only users who are SIGNED IN should be able to access this page -->
 <%= form_for(@tip) do |f| %>
   <% if @tip.errors.any? %>
     <div id="error_explanation">
@@ -66,7 +67,10 @@
       <td><%= f.submit %></td>
       <% end %>
       <td><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
-    </div>
+      <td><%= button_to 'About', about_page_path, {:class => "buttonTo", :method => "get"} %></td>
+      <td><%= button_to 'Privacy',  policy_page_path, {:class => "buttonTo", :method => "get"} %></td>
+      <td><%= button_to 'Sign Out',  session_path,     { method: :delete } %></td>
+   </div>
   </tr>
 </table>
 
