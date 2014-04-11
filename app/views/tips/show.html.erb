@@ -6,7 +6,7 @@
 <td><img src='/assets/ruby.png' width='15 height='15></td>
 </tr>
 </table>
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice">< % = notice %></p> -->
 
 <table class='redback'>
 <tr>
@@ -41,11 +41,15 @@
 <br/>
 <table>
   <tr>
-<!--    <td>< % = button_to 'Edit', edit_tip_path(@tip), {:class => "buttonTo", :method => "get"} %></td> -->
-<!--    <td>< % = button_to 'Privacy', policy_page_path, {:class => "buttonTo", :method => "get"} %></td> -->
-    <td align='right'><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
-    <td><%= button_to 'About', about_page_path, {:class => "buttonTo", :method => "get"} %></td>
-  </tr>
+  <% binding.pry %>
+  <!-- current_user must be signed in and own this tip to allow the edit button -->
+  <% if( current_user && (current_user[:email] == @tip[:email])) %>
+    <td><%= button_to 'Edit', edit_tip_path(@tip), { class: "buttonTo", method: :get } %></td>
+  <% end %>
+    <td><%= button_to "Tips",  tips_path,          { class: "button", method: :get } %></td>
+    <td><%= button_to 'About', about_page_path,    { class: "button", method: :get } %></td>
+    <td><%= button_to 'Privacy', policy_page_path, { class: "button", method: :get } %></td>
+ </tr>
 </table> 
 </center>
 
