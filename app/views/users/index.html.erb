@@ -39,9 +39,14 @@ $('.userz table').tablesorter({
 
 <table class='foot-buttons'>
   <tr>
-    <td><%= button_to 'New User',  new_user_path, {:class => "buttonTo", :method => "get"} %></td>
     <td><%= button_to 'Tips', tips_path, {:class => "buttonTo", :method => "get"} %></td>
     <td><%= button_to 'About', root_path, {:class => "buttonTo", :method => "get"} %></td>
+    <% if !current_user %>
+      <td><%= button_to 'Sign In', new_session_path, {:class => "buttonTo", :method => "get"} %></td>
+      <td><%= button_to 'Register',  new_user_path, {:class => "buttonTo", :method => "get"} %></td>
+    <% else %>
+      <td><%= button_to "Sign Out", session_path, data: { method: :delete, confirm: "Sign out #{current_user.firstname} #{current_user.lastname}?"} %></td>
+    <% end %>
   </tr>
 </table>
 
