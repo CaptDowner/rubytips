@@ -3,12 +3,11 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-
 private
   def require_signin
     unless current_user
       session[:intended_url] = request.url
-      redirect_to new_session_url, alert: "Please sign in first!"
+      redirect_to new_session_url, alert: "Please sign in!"
     end
   end
 
@@ -35,5 +34,11 @@ private
   end
 
   helper_method :current_user_admin?
+
+  def current_user_or_admin?
+    current_user || current_user.admin?
+  end
+
+  helper_method :current_user_or_admin?
 
 end
