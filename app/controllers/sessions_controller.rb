@@ -16,7 +16,6 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       flash[:notice] = "Welcome back, #{user.firstname}!"
       redirect_to (session[:intended_url] || tips_path)
-# user)
       session[:intended_url] = nil
    else
       if user
@@ -27,7 +26,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-#    binding.pry
     uzr = User.find_by(id: session[:user_id])
     session[:user_id] = nil
     redirect_to tips_url, notice: "#{uzr.firstname} #{uzr.lastname} signed out successfully!"
