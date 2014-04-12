@@ -1,6 +1,8 @@
 class TipsController < ApplicationController
 #  before_filter :authenticate_user!
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
+  before_action :require_signin, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show]
 
   def index
    @tips = Tip.text_search(params[:query]).order(sort_column + ' ' + sort_direction).page(params[:page])
@@ -63,6 +65,12 @@ class TipsController < ApplicationController
   end
 
 private
+  def require_admin
+    unless current_user_admin?
+      redirect_to tips_path, alert: "Unauthorized access!"
+    end
+  end
+
     # Use callbacks to share common setup or constraints between actions.
   def sort_column
     params[:sort] || "subject"
