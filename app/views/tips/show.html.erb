@@ -1,3 +1,4 @@
+<!-- Show page for Tip model-->
 <center>
 <% require 'obfuscate' %>
 <table class='tip-top'><tr><td><img src='/assets/ruby.png' width='15 height='15>
@@ -42,10 +43,13 @@
 <table>
   <tr>
   <% binding.pry %>
-  <!-- current_user must be signed in and own this tip to allow the edit button -->
-  <% if( current_user && (current_user[:email] == @tip[:email])) %>
+  <!-- current_user must be signed in and own this tip 
+       or be an admin to allow these buttons -->
+  <% if(( current_user && (current_user[:email] == @tip[:email])) || current_user.admin? ) %>
     <td><%= button_to 'Edit', edit_tip_path(@tip), { class: "buttonTo", method: :get } %></td>
+    <td><%= button_to 'Delete',    @tip,           { method: :delete, data: { confirm: "Delete this tip?"} } %></td>
   <% end %>
+   
     <td><%= button_to "Tips",  tips_path,          { class: "button", method: :get } %></td>
     <td><%= button_to 'About', about_page_path,    { class: "button", method: :get } %></td>
     <td><%= button_to 'Privacy', policy_page_path, { class: "button", method: :get } %></td>
