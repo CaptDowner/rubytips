@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
-  
+  has_many :tips
+
   # use Michael Hartl's regex for email validation
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

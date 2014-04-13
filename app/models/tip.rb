@@ -1,6 +1,6 @@
 class Tip < ActiveRecord::Base
 include PgSearch
-
+  has_one :user
 #  class EmailValidator < ActiveRecord::Validator
 #    def validate()
 #      record.errors[:email] << "is not valid" unless
@@ -11,8 +11,8 @@ include PgSearch
 #  validates_with EMailValidator
   paginates_per 20
 
-  validates :firstname, :presence => true
-  validates :lastname, :presence => true 
+#  validates :firstname, :presence => true
+#  validates :lastname, :presence => true 
   validates :subject, :presence => true 
   validates :rubytype, :presence => true
   validates :tip, :length => {:minimum => 18}, :presence => true
