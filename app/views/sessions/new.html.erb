@@ -5,11 +5,13 @@
     <td><img src='/assets/ruby.png' width='15' height='15'></td>
   </tr>
 </table>
-
+<!-- Message indicating Registration and Log in required. --> 
 <p class='signin-msg'>Sign in to access advanced site features.</p>
-<p class='signin-msg'> Registration is required prior to signing in.</p>
+<p class='signin-msg'>Registration is required for new users.</p>
+
 <%= form_tag(session_path) do %>
   <fieldset>
+  <!-- Signing in requires a unique email address and a password -->
   <div class='signin'>
     <table>
        <tr>
@@ -19,28 +21,24 @@
          <td><%= password_field_tag :password, nil %></td>
       </tr>
     </table>
-  <table class='foot-buttons'>
-    <tr>
+    <table class='foot-buttons'>
+      <tr>
+      <!-- show these buttons if user is not signed in -->
       <% if !current_user %>
         <td><%= submit_tag "Sign In" %></td>
         <td><%= button_to "Register", signup_path,      { class: "button", method: "get"} %>
       <% else %>
-      <!-- Issue an alert message that you are already signed in as firstname/lastname -->
+      <!-- show this button to signed in users -->
+      <!-- If chosen, issue an alert message confirming session sign out -->
         <td><%= button_to 'Sign Out', session_path, method: :delete %></td>
       <% end %>
+      <!-- show these buttons to all users -->
         <td><%= button_to 'About',    about_page_path,  {:class => "buttonTo", :method => "get"} %></td>
         <td><%= button_to 'Privacy',  policy_page_path, {:class => "buttonTo", :method => "get"} %></td>
         <td><%= button_to "Tips",     tips_path,        {:class => "buttonTo", :method => "get"} %></td>
-   </tr>
-  </table> 
-<!--
-    <p>< % = submit_tag "Sign In" %></p>
-    <p>< % = button_to "Register", signup_path, { class: "button", method: "get"} %></p>
--->
-<!-- "$ ( 'form_id').action=' # { user_path(user.id)}';$('form_id').submit();"' %></p> -->
-
+      </tr>
+    </table> 
   </div>   <!-- end div:signin -->
   </fieldset>
-<!--  < % = button_to "Register", name: 'register' %> -->
 
 <% end %>
