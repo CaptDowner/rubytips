@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
   before_action :require_signin, except: [:new, :create, :index]
-  before_action :require_correct_user, only: [:show, :edit, :update, :destroy ]
+  before_action :require_correct_user, only: [:index, :show, :edit, :update, :destroy ]
 
   def index
-    @users = User.all
+    if current_user_admin?
+      @users = User.all
+    else
+      redirect_to tips_path, alert: 'Access to user information is restricted to admins!'
+    end
   end
 
   def create
@@ -17,10 +21,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user_or_admin?
+    if current_user || current_user_admin?
       @user = User.find(params[:id])
     else
-       redirect_to tips_path, notice: "Login required to access your user page!"
+      redirect_to tips_path, notice: "Login required to access your user page!"
     end
   end
 
@@ -49,9 +53,9 @@ class UsersController < ApplicationController
 
 private
   def require_correct_user
-    @user = User.find(params[:id])
-    unless current_user?(@user)
-      redirect_to root_url
+#    @user = User.find(params[:id])
+    unless current_user || current_user_admin?
+      redirect_to new_session_path
     end
   end
 

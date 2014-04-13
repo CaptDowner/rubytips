@@ -1,4 +1,7 @@
 class TipsController < ApplicationController
+#  has_one :user
+#  belongs_to :user
+
 #  before_filter :authenticate_user!
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
   before_action :require_signin, except: [:index, :show]
