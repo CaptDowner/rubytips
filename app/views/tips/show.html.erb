@@ -42,18 +42,23 @@
 <br/>
 <table>
   <tr>
-  <% binding.pry %>
+<!--  < % binding.pry % >  -->
   <!-- current_user must be signed in and own this tip 
        or be an admin to allow these buttons -->
-  <% if(( current_user && (current_user[:email] == @tip[:email])) || current_user.admin? ) %>
-    <td><%= button_to 'Edit', edit_tip_path(@tip), { class: "buttonTo", method: :get } %></td>
-    <td><%= button_to 'Delete',    @tip,           { method: :delete, data: { confirm: "Delete this tip?"} } %></td>
-  <% end %>
-   
-    <td><%= button_to "Tips",  tips_path,          { class: "button", method: :get } %></td>
-    <td><%= button_to 'About', about_page_path,    { class: "button", method: :get } %></td>
-    <td><%= button_to 'Privacy', policy_page_path, { class: "button", method: :get } %></td>
- </tr>
+  <td><%= button_to "Tips",  tips_path,          { class: "button", method: :get } %></td>
+    <% if(( current_user && (current_user[:email] == @tip[:email])) || current_user_admin? ) %>
+      <td><%= button_to 'Edit', edit_tip_path(@tip), { class: "buttonTo", method: :get } %></td>
+     <!-- Only admins can delete tips --> 
+     <% if current_user_admin? %>
+        <td><%= button_to 'Delete',    @tip,           { method: :delete, data: { confirm: "Delete this tip?"} } %></td>
+      <% end %>
+    <% else %>
+      <td><%= button_to 'About', about_page_path,    { class: "button", method: :get } %></td>
+      <td><%= button_to 'Privacy', policy_page_path, { class: "button", method: :get } %></td>
+      <td><%= button_to "Sign In",  new_session_path, { class: "button", method: "get"} %>
+      <td><%= button_to "Register", signup_path,      { class: "button", method: "get"} %>
+    <% end %>
+</tr>
 </table> 
 </center>
 

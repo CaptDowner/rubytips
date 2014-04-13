@@ -46,9 +46,12 @@ $('.tipz table').tablesorter({
           <td><%= obscure_email(tip.email).html_safe %></td>
           <td><%= tip.created_at.strftime("%m/%d/%Y") %></td>
           <!-- <td>< % = tip.source % ></td> -->
-          <td class='idx-a'><%= link_to 'Show', tip %></td>
-          <!-- <td class='idx-a'>< % = link_to 'Edit', edit_tip_path(tip) % ></td>
-          <td class='idx-a'>< % = link_to 'Destroy', tip, confirm: 'Are you sure?', method: :delete % ></td> -->
+          <td class='idx-a'><%= link_to 'Show', tip %>
+          <% if current_user_admin? %>
+            <%= link_to 'Edit', edit_tip_path(tip) %>
+            <%= link_to 'Destroy', tip, confirm: 'Are you sure?', method: :delete %>
+          <% end %> 
+          </td>
         </tr>
       <% end %>
 

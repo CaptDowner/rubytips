@@ -43,22 +43,26 @@
       <div class="field"><b><%= f.label 'Applies to:' %></b></td><td><%= f.text_field :applies_to %></div>
     </td>
   </tr>
+<!--
   <tr>
     <td class='reddy1'>
-      <div class="field"><b><%= f.label 'Firstname:' %></b></td><td><%= f.text_field :firstname %></div>
+      <div class="field"><b>< % = f.label 'Firstname:' %></b></td><td>< % = f.text_field :firstname %></div>
     </td>
     <td class='reddy1'>
-      <div class="field"><b><%= f.label 'Lastname:' %></b></td><td><%= f.text_field :lastname %></div>
+      <div class="field"><b>< % = f.label 'Lastname:' %></b></td><td>< % = f.text_field :lastname %></div>
     </td>
   </tr>
-  <tr>
-    <td class='reddy1'>
-      <div class="field"><b><%= f.label 'Posted:' %></b></td><td><%= f.datetime_select :posted %></div>
-    </td>
-    <td class='reddy1'>
-      <div class="field"><b>Reference:</b></td><td><%= f.text_field :xmail %></duv>
-    </td>
-  </tr>
+-->
+  <% if current_user_admin? %>
+    <tr>
+      <td class='reddy1'>
+        <div class="field"><b><%= f.label 'Posted:' %></b></td><td><%= f.datetime_select :posted %></div>
+      </td>
+      <td class='reddy1'>
+        <div class="field"><b>Reference:</b></td><td><%= f.text_field :xmail %></duv>
+      </td>
+    </tr>
+  <% end %>
 </table>
 
 <br />
