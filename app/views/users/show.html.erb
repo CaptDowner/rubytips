@@ -21,19 +21,18 @@
   <table class='foot-buttons'>
     <tr>
       <% if !current_user %>
-        <td><%= button_to 'Register',  signup_path, {:class => "buttonTo", :method => "get"} %></td>
-        <td><%= button_to 'Sign In',   new_session_path, {:class => "buttonTo", :method => "get"} %></td>
-        <td><%= button_to 'Tips',      tips_path,             { class: 'button', method: :get } %></td>
-     <% else %>
-        <td><%= button_to 'Edit User', edit_user_path(@user), { class: 'button', method: :get } %></td>
-        <td><%= button_to 'Users',     users_path,            { class: 'button', method: :get } %></td>
-        <td><%= button_to 'Tips',      tips_path,             { class: 'button', method: :get } %></td>
-<!--        <td>< % = button_to 'Sign Out',  session_path, data:    { class: 'button', method: :delete, confirm: 'Sign out #{@user.firstname} #{@user.lastname}?'} }%></td> -->
-        <td><%= button_to 'Sign Out',  session_path,          { class: 'button', method: :delete, confirm: 'Sign out #{current_user.firstname} #{current_user.lastname}?'} %></td>
-       <% if current_user_or_admin? %>
-         <td><%= button_to 'Delete',   user_path,             { class: 'button', method: :delete,  confirm: 'Delete user: #{@user.firstname} #{@user.lastname}?'}  %></td>
-       <% end %>
-     <% end %>
+        <td><%= button_to 'Register',  signup_path,           { class: 'buttonTo', :method :get } %></td>
+        <td><%= button_to 'Sign In',   new_session_path,      { class: 'buttonTo', :method :get } %></td>
+        <td><%= button_to 'Tips',      tips_path,             { class: 'buttonTo', method: :get } %></td>
+      <% else %>
+        <td><%= button_to 'Edit User', edit_user_path(@user), { class: 'buttonTo', method: :get } %></td>
+        <td><%= button_to 'Users',     users_path,            { class: 'buttonTo', method: :get } %></td>
+        <td><%= button_to 'Tips',      tips_path,             { class: 'buttonTo', method: :get } %></td>
+        <td><%= button_to 'Sign Out',  session_path,          { class: 'buttonTo', method: :delete, confirm: 'Sign out #{current_user.firstname} #{current_user.lastname}?'} %></td>
+        <% if current_user_or_admin? %>
+          <td><%= button_to 'Delete',   user_path,            { class: 'buttonTo', method: :delete,  confirm: 'Delete user: #{@user.firstname} #{@user.lastname}?'}  %></td>
+        <% end %>
+      <% end %>
  </tr>
   </table>
 
