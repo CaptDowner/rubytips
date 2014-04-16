@@ -5,10 +5,10 @@
       <p>
         <% if current_user %>
           <%= link_to current_user.firstname, current_user %>
-          <%= link_to "Sign Out", session_path, method: :delete, class: "button" %>
+          <%= link_to "Sign Out", session_path, method: :delete, class: 'buttonTo' %>
         <% else %>
-          <%= link_to "Register", signup_path, class: "button" %>
-          <%= link_to "Sign In", new_session_path, class: "button" %>
+          <%= link_to "Register", signup_path, class: 'buttonTo' %>
+          <%= link_to "Sign In", new_session_path, class: 'buttonTo' %>
         <% end %>
       </p>
     </nav>
