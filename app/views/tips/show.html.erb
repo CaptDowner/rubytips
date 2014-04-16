@@ -42,22 +42,25 @@
 <br/>
 <table>
   <tr>
-<!--  < % binding.pry % >  -->
-  <!-- current_user must be signed in and own this tip 
-       or be an admin to allow these buttons -->
-  <td><%= button_to "Tips",  tips_path,          { class: "button", method: :get } %></td>
-    <% if(( current_user && (current_user[:email] == @tip[:email])) || current_user_admin? ) %>
-      <td><%= button_to 'Edit', edit_tip_path(@tip), { class: "buttonTo", method: :get } %></td>
-     <!-- Only admins can delete tips --> 
-     <% if current_user_admin? %>
-        <td><%= button_to 'Delete',    @tip,           { method: :delete, data: { confirm: "Delete this tip?"} } %></td>
+  <!-- current_user must be signed in and own this tip -->
+  <!-- or be an admin to allow these buttons           -->
+  <td><%= button_to "Tips",  tips_path,                     { class: 'buttonTo', method: :get } %></td>
+    <% if(( current_user && (current_user[:id] == @tip[:user_id])) || current_user_admin? ) %>
+      <td><%= button_to 'Edit',        edit_tip_path(@tip), { class: 'buttonTo', method: :get } %></td>
+      <!-- Only admins can delete tips --> 
+      <% if current_user_admin? %>
+        <td><%= button_to 'Delete',    tip_path,           { class: 'buttonTo', method: :delete, data: { confirm: "Delete this tip?"} } %></td>
       <% end %>
     <% else %>
-      <td><%= button_to 'About', about_page_path,    { class: "button", method: :get } %></td>
-      <td><%= button_to 'Privacy', policy_page_path, { class: "button", method: :get } %></td>
-      <td><%= button_to "Sign In",  new_session_path, { class: "button", method: "get"} %>
-      <td><%= button_to "Register", signup_path,      { class: "button", method: "get"} %>
+      <% if current_user %>
+        <td><%= button_to 'Sign Out',  session_path,        { class: 'buttonTo', method: :delete } %></td>
+      <% else %>
+         <td><%= button_to "Sign In",  new_session_path,    { class: 'buttonTo', method: :get } %></td>
+         <td><%= button_to "Register", signup_path,         { class: 'buttonTo', method: :get } %></td>
+     <% end %>
     <% end %>
+    <td><%= button_to 'About',         about_page_path,     { class: 'buttonTo', method: :get } %></td>
+    <td><%= button_to 'Privacy',       policy_page_path,    { class: 'buttonTo', method: :get } %></td>
 </tr>
 </table> 
 </center>
