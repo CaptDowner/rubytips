@@ -71,10 +71,14 @@
     <div class="actions">
       <td><%= f.submit %></td>
       <% end %>
-      <td><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
-      <td><%= button_to 'About', about_page_path, {:class => "buttonTo", :method => "get"} %></td>
-      <td><%= button_to 'Privacy',  policy_page_path, {:class => "buttonTo", :method => "get"} %></td>
-      <td><%= button_to 'Sign Out',  session_path,     { method: :delete } %></td>
+      <td><%= button_to "Tips",  tips_path, {:class => 'buttonTo', :method => :get} %></td>
+      <td><%= button_to 'About', about_page_path, {:class => 'buttonTo', :method => :get} %></td>
+      <td><%= button_to 'Privacy',  policy_page_path, {:class => 'buttonTo', :method => :get} %></td>
+      <% if current_user %>
+        <td><%= button_to 'Sign Out', session_path, {class: 'buttonTo', method: :delete } %></td>
+      <% else %>
+        <td><%= button_to "Sign In",  new_session_path, { class: 'buttonTo', method: :get} %>
+      <% end %>
    </div>
   </tr>
 </table>
