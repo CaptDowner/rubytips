@@ -49,7 +49,7 @@ $('.tipz table').tablesorter({
           <td class='idx-a'><%= link_to 'Show', tip %>
           <% if current_user_admin? %>
             <%= link_to 'Edit', edit_tip_path(tip) %>
-            <%= link_to 'Destroy', tip, confirm: 'Are you sure?', method: :delete %>
+            <%= link_to 'Destroy', tip, data: { method: :delete, confirm: 'Delete this tip from ' << tip.email << '?'} %>
           <% end %> 
           </td>
         </tr>
@@ -65,12 +65,12 @@ $('.tipz table').tablesorter({
 
 <table class='foot-buttons'>
   <tr>
-    <td><%= button_to 'About',      about_page_path,  { class: "button", method: "get"} %></td>
+    <td><%= button_to 'About',      about_page_path,  { class: 'buttonTo', method: "get"} %></td>
     <% if !current_user %>
-      <td><%= button_to "Sign In",  new_session_path, { class: "button", method: "get"} %>
-      <td><%= button_to "Register", signup_path,      { class: "button", method: "get"} %>
+      <td><%= button_to 'Sign In',  new_session_path, { class: 'buttonTo', method: "get"} %>
+      <td><%= button_to 'Register', signup_path,      { class: 'buttonTo', method: "get"} %>
     <% else %>
-     <td><%= button_to 'New Tip',   new_tip_path,     { :class => "buttonTo", :method => "get"} %></td>
+     <td><%= button_to 'New Tip',   new_tip_path,     { class: 'buttonTo', :method => "get"} %></td>
      <td><%= button_to 'Sign Out',  session_path,     { method: :delete } %></td>
     <% end %>
 
