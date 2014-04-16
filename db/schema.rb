@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20140412212016) do
     t.datetime "posted"
     t.string   "xmail"
     t.text     "tip"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|
