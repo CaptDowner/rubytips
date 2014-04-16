@@ -1,11 +1,9 @@
 class TipsController < ApplicationController
-#  has_one :user
-#  belongs_to :user
 
 #  before_filter :authenticate_user!
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
   before_action :require_signin, except: [:index, :show]
-  before_action :require_admin, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show, :edit, :update]
 
   def index
    @tips = Tip.text_search(params[:query]).order(sort_column + ' ' + sort_direction).page(params[:page])
