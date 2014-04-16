@@ -28,6 +28,6 @@ class SessionsController < ApplicationController
   def destroy
     uzr = User.find_by(id: session[:user_id])
     session[:user_id] = nil
-    redirect_to tips_url, notice: "#{uzr.firstname} #{uzr.lastname} signed out successfully!"
+    redirect_to tips_path, notice: "Signed out successfully!"
   end
 end
