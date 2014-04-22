@@ -29,6 +29,10 @@ class TipsController < ApplicationController
   end
 
   def edit
+    unless current_user_admin? || current_user.id == @tip.user_id 
+      redirect_to tips_path, alert: "Inspector Clouseau: \"That is not your tip.\""
+#alert: "Tip must belong to  #{current_user.firstname} #{current_user.lastname} to edit!"
+    end
   end
 
   def create
@@ -87,6 +91,6 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def tip_params
-    params.require(:tip).permit(:source, :rubytype, :subject, :category, :tip, :applies_to, :email, :posted, :firstname, :lastname, :xmail)
+    params.require(:tip).permit(:source, :rubytype, :subject, :category, :tip, :applies_to, :email, :posted, :xmail, :user_id)
   end
 end

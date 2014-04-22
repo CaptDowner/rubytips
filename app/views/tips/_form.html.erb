@@ -43,16 +43,6 @@
       <div class="field"><b><%= f.label 'Applies to:' %></b></td><td><%= f.text_field :applies_to %></div>
     </td>
   </tr>
-<!--
-  <tr>
-    <td class='reddy1'>
-      <div class="field"><b>< % = f.label 'Firstname:' %></b></td><td>< % = f.text_field :firstname %></div>
-    </td>
-    <td class='reddy1'>
-      <div class="field"><b>< % = f.label 'Lastname:' %></b></td><td>< % = f.text_field :lastname %></div>
-    </td>
-  </tr>
--->
   <% if current_user_admin? %>
     <tr>
       <td class='reddy1'>
@@ -62,9 +52,15 @@
         <div class="field"><b>Reference:</b></td><td><%= f.text_field :xmail %></duv>
       </td>
     </tr>
+    <tr>
+      <td class='reddy1'>
+        <div class="field"><b>User_id:</b></td><td><%= f.text_field :user_id %></div>
+      </td>
+    </tr> 
+  <% else %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   <% end %>
 </table>
-
 <br />
 <table class='foot-buttons'>
   <tr>
@@ -83,17 +79,3 @@
   </tr>
 </table>
 
-
-<!--
-
-Conditional form display for buttons:
-
-Couple of options:
-
-   1. Have two different submit buttons (one for each form) and then actually 
-      have this be part of the tab content instead of the modal-footer.
-   2. Generate two modal footer divs and set the second one to display: none. 
-      Then through javascript toggle the visibility appropriately. I'd probably take this approach.
-   3. Via javascript override the form target based on the tab that gets clicked.
-
--->
