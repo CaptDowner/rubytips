@@ -5,8 +5,18 @@ $('.tipz table').tablesorter({
    widgetZebra: {css: ["NormRow","AltRow"]} // css classes to apply to rows
 });
 </script>
+<style>
+.pnation {
+  margin-top: -12px;
+  border: 0;
+}
 
-
+.pnation td{
+  font-weight: normal;
+  text-align: center;
+  font-size: 14px;
+}
+</style>
 <center>
 <table class='tip-top'>
   <tr>
@@ -59,22 +69,22 @@ $('.tipz table').tablesorter({
   </table>
 </div> <!-- end div:tipz -->
 <br/>
-<!--
-< % = paginate @tips % ></p>
--->
-
-<table class='foot-buttons'>
+  <table class='pnation'>
   <tr>
-    <td><%= button_to 'About',      about_page_path,  { class: 'buttonTo', method: "get"} %></td>
-    <% if !current_user %>
-      <td><%= button_to 'Sign In',  new_session_path, { class: 'buttonTo', method: "get"} %>
-      <td><%= button_to 'Register', signup_path,      { class: 'buttonTo', method: "get"} %>
-    <% else %>
-     <td><%= button_to 'New Tip',   new_tip_path,     { class: 'buttonTo', :method => "get"} %></td>
-     <td><%= button_to 'Sign Out',  session_path,     { method: :delete } %></td>
-    <% end %>
-
+    <td colspan='3'><%= paginate @tips %></td>
   </tr>
-</table> 
+  </table>
+  <table class='foot-buttons' align='center'>
+    <tr>
+      <td><%= button_to 'About',      about_page_path,  { class: 'buttonTo', method: "get"} %></td>
+      <% if !current_user %>
+        <td><%= button_to 'Sign In',  new_session_path, { class: 'buttonTo', method: "get"} %>
+        <td><%= button_to 'Register', signup_path,      { class: 'buttonTo', method: "get"} %>
+      <% else %>
+        <td><%= button_to 'New Tip',   new_tip_path,     { class: 'buttonTo', :method => "get"} %></td>
+        <td><%= button_to 'Sign Out',  session_path,     { method: :delete } %></td>
+      <% end %>
+    </tr>
+  </table> 
 <!-- </div> -->
 </center>
