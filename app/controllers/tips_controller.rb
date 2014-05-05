@@ -6,7 +6,9 @@ class TipsController < ApplicationController
   before_action :require_admin, except: [:index, :show, :edit, :update]
 
   def index
-   @tips = Tip.text_search(params[:query]).order(sort_column + ' ' + sort_direction).page(params[:page])
+#   @tips = Tip.text_search(params[:query]).order(sort_column + ' ' + sort_direction).page(params[:page])
+#    @tips = Tip.text_search(params[:query]).order(params[:sort] + ' ' + params[:direction]).page(params[:page])
+    @tips = Tip.text_search(params[:query]).order(sort_column + ' ' + sort_direction).page(params[:page])
   end
 
   def show
