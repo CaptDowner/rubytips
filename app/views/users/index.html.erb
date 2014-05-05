@@ -5,6 +5,18 @@ $('.userz table').tablesorter({
    widgetZebra: {css: ["NormRow","AltRow"]} // css classes to apply to rows
 });
 </script>
+<style>
+.pnation {
+  margin-top: -12px;
+  border: 0;
+}
+
+.pnation td{
+  font-weight: normal;
+  text-align: center;
+  font-size: 14px;
+}
+</style>
 
 <table class='tip-top'>
   <tr>
@@ -37,9 +49,17 @@ $('.userz table').tablesorter({
     </tbody>
   </table>
 </div> <!-- end div:userz -->
+<table class='pnation'>
+  <tr>
+    <td colspan='3'><%= paginate @users %></td>
+  </tr>
+</table>
 
 <table class='foot-buttons'>
   <tr>
+    <td> colspan='3'><%= paginate @users %></td>
+  </tr>
+    <tr>
     <td><%= button_to 'Tips',       tips_path,        {class: 'buttonTo', method: :get} %></td>
     <td><%= button_to 'About',      root_path,        {class: 'buttonTo', method: :get} %></td>
     <% if !current_user %>
