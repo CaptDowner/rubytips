@@ -98,8 +98,8 @@
           <td><%= button_to "Tips",  tips_path, {:class => "buttonTo", :method => "get"} %></td>
           <td><%= button_to 'Privacy', policy_page_path, {:class => "buttonTo", :method => "get"} %></td>
           <% if !current_user %>
-            <td><%= button_to "Sign In", new_session_path, {class: "button", method: "get"} %>
-            <td><%= button_to "Register", signup_path, { class: "button", method: "get"} %>
+            <td><%= button_to "Sign In", new_session_path, {class: "buttonTo", method: "get"} %>
+            <td><%= button_to "Register", signup_path, { class: "buttonTo", method: "get"} %>
           <% else %>
             <td><%= button_to "Sign Out", session_path, data: { method: :delete, confirm: "Sign out #{current_user.firstname} #{current_user.lastname}?"} %></td>
           <% end %>
